@@ -1,0 +1,120 @@
+
+
+        .crop {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        body {
+            background-color: #09F;
+        }
+        .indent {
+            text-indent: 50px
+        }
+        .tooltip {
+            position: relative;
+            display:  inline-block
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 300px;
+            background-color: #000;
+            color: #FFF;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 1;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+        .visible {
+            color: white
+        }
+        .column {
+            float: left;
+            width: auto;
+            padding: 5px;
+        }
+        .row::after{
+            content: "";
+            clear: both;
+            display: table;
+        }
+		.comments{
+			background-color: #000;
+			height: auto;
+			width: auto;
+		}
+		.header {
+			text-align: center;
+		}
+		.column1 {
+			float: left;
+			width: 30%;
+			padding: 15px;
+		}
+		.row:after {
+			content: "";
+			display: table;
+			clear: both;
+		}	
+		.footer {
+			position: absolute;
+			left: 0;
+			bottom: 10;
+			width: 100%;
+			color: #00f;
+			text-align: center;
+			background-color: #6ff;
+		}
+		h1 {
+		background-color: "#000";
+		color: #FFF;
+		}
+		.profile {
+		width: 70px;
+		height: 70px;
+		border-radius: 50%;
+		}
+		.nav {
+			overflow: hidden;
+			background-color: #111
+		}
+		.nav a {
+			float: left;
+			display: block;
+			color: #f2f2f2;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+		.nav a:hover {
+			background-color: #aaa;
+			color: #000;
+		}
+		.button {
+			background-color: #f2f2f2;
+			text-align: center;
+			color: #f2f2f2;
+			padding: 14px 16px;
+			text-decoration: none;
+			border: none;
+		}
+		.button:hover {
+			background-color: #aaa;
+			color: #000
+		}
+		.zoom {
+			transition: transform .2s;
+			margin: 0 auto;
+		}
+		.zoom:hover {
+			cursor: zoom-in;
+			-ms-transform: scale(3);
+			-webkit-transform: scale(3);
+			transform: scale(3);
+		}
+		
+		

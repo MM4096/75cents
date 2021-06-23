@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+    <title>Profiles - Salmon   (The animal web)</title>
+	<link href="Styles.css" rel="stylesheet">
+	<style>
+	.comments {
+		background-color: #08F;
+	}
+	.nav {
+		background-color: #08F
+	}
+	.nav a:hover {
+		background-color: #0FF
+	}
+	.button {
+		background-color: #08F;
+	}
+	.button:hover {
+		background-color: #0FF;
+	}
+	</style>
+</head>
+<body>
+
+<div class="header" class="teal">
+    <h1>Salmon</h1><img src="Salmon_Profile.png" class="crop" alt="Salmon's Profile">
+</div>
+	<div class="nav">
+		<a href="mainpage.html">Main Page</a>
+		<a href="newspage.html">News Page</a>
+		<a href="about.html">About Us</a>
+	</div>
+<p><small>2 Follows <br>1 Post</small></p>
+<div class="row">
+	<div class="column1">
+	<h2>Description</h2>
+	<button id="hideButton" onclick="hidePhoto()" class="button">Hide</button>
+	<button id="showButton" onclick="showPhoto()" hidden class="button">Show</button>
+	<div id="showOrHide">
+    	<h3><i>Salmo Salar</i></h3>
+    	<p><div class="tooltip">Kingdom: Animalia<span class="tooltiptext">All living animals are in this kingdom</span></div>
+    	<br><div class="tooltip">Phylum: Chordata<span class="tooltiptext">All that have 5 special points <a href="https://en.wikipedia.org/wiki/Chordate" class="visible" target="_blank">More Info</a></span></div>
+    	<br><div class="tooltip">Class: Actinopterygii <span class="tooltiptext">All ray-finned fishes</span></div>
+    	<br><div class="tooltip">Order: Salmoniformes<span class="tooltiptext">All ray-finned fishes</span></div>
+    	<br>Family: Salmonidae
+    	<br>Genus: Salmo
+    	<br>Species: Salar</p>
+    	<img src="foodWeb.png" width="300" height="250" alt="Salmon's Food Web">
+	<h2>My Adaptations</h2>
+	<p>
+	I am born in rivers, and moves to the sea later on in life. I am adapted to cope with both freshwater and seawater. <br>
+	My body shape allows me to escape predators (mainly seals and birds) faster, and also to hunt quicker.
+	I also have a line on my body that can sense which way the current is going, so I know where to go to migrate.
+	</p>
+	
+	</div>
+	</div>
+	<div class="column1">
+	<h2>Where I live</h2>
+	<p>
+	I live in the North Atlantic Ocean, and also in the Pasific.
+	</p>
+	<figure>
+	<img src="salmondistribution.jpg" width="50%" height="50%" class="zoom">
+	<figcaption>Where I live</figcaption>
+	</figure>
+	<img src="full.png" width="100" height="25"  onClick="emptyHeart()" id="full" hidden/>
+	<img src="empty.png" width="100" height="25"  onClick="fullHeart()" id="notFull"/>
+	<br>
+	<textarea id="comments" rows=4 coloums=10>Write a comment to Salmon... </textarea>
+	<br>
+	<br>
+	<button onclick="submit()" id="commentsButton" class="button">Submit</button>
+	<br>
+	<div class="comments" class="teal">
+	<p id="submitted"></p>
+	<p>Salmon123 says: Nice profile!</p>
+	<p>Shark says: Hey Salmon, you forgot that I eat you</p>
+	<p class="indent">Salmon replied: I know, I updated it, but the website takes a while to update</p>
+	<p class="indent"> Pelican replied: <strong>YOU FORGOT ME TOO &#128544; &#128544; &#128544;</strong></p>
+	<p>Worm says: Hey Salmon, when did I get into a aquatic biomes?</p>
+	</div>
+	</div>
+	<div class="column1">
+	<h2>My Followers</h2>
+	<button onclick="follow()" class="button">Follow</button>
+	<div class="row">
+    <div class="column">
+
+    </div>
+    <div class="column">
+        <figure>
+            <img src="https://cdn.shopify.com/s/files/1/0071/1167/1926/products/2019_Special_Style_Full_Square_Drill_Shark_5d_Diy_Diamond_Painting_Kits_UK_NA0395_1200x1200.jpg?v=1571724083" class="crop">
+            <figcaption><a href=shark.html>Shark</a></figcaption>
+        </figure>
+    </div>
+    <div class="column">
+        <figure>
+            <img src="Tuna.png" class="crop">
+            <figcaption>Tuna</figcaption>
+        </figure>
+    </div>
+	<div class="column">
+		<figure>
+			<img id="yourImage" class="crop">
+			<figcaption id="yourName"></figcaption>
+		</figure>
+	</div>
+	</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+<div class="footer">
+	<p><small>References:</small></p>
+	<a href="https://upload.wikimedia.org/wikipedia/commons/3/39/Salmo_salar.jpg" target="_blank"><small>wikimedia.org : salmon picture</small></a><br>
+	<a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrhUg0AxXUCOa195wOn5-Zvg37Gm48YmQ5sA&usqp=CAU" target="_blank"><small>water background</small></a>
+	<a href="https://www.msc.org/what-you-can-do/eat-sustainable-seafood/fish-to-eat/tuna" target="_blank"><small>Tuna Profile picture</small></a><br>
+	<a href="https://www.livescience.com/healthy-california-shark-population.html" target="blank_"><small>Shark Profile picture</small></a>
+	<a href="http://bioweb.uwlax.edu/bio203/s2009/webb_laur/Habitat.htm" target="blank_"><small>Salmon Adaptations</small></a>
+	<a href="https://docs.google.com/document/d/1t3EsDVuJZc92lIVuj6ZM4Y1oYDMZCdNokAkwMuGvA-U/edit" target="blank_"><small>Food web images</small></a>
+</div>
+<script>
+    function showPhoto() {
+        let x = document.getElementById("showOrHide");
+        let y = document.getElementById("hideButton");
+        let z = document.getElementById("showButton");
+        x.style.display = "block";
+        y.style.display = "block";
+        z.style.display = "none";
+
+    }
+    function hidePhoto() {
+        let x = document.getElementById("showOrHide");
+        let y = document.getElementById("hideButton");
+        let z = document.getElementById("showButton");
+        x.style.display = "none";
+        y.style.display = "none";
+        z.style.display = "block";
+    }
+    function emptyHeart() {
+        let x = document.getElementById("full")
+        let y = document.getElementById("notFull")
+        x.style.display = "none"
+        y.style.display = "block"
+    }
+    function fullHeart() {
+        let x = document.getElementById("full")
+        let y = document.getElementById("notFull")
+        x.style.display = "block"
+        y.style.display = "none"
+    }
+    function submit() {
+        let p = prompt("Please enter a username", "")
+        let x = document.getElementById("comments").value
+        document.getElementById("submitted").innerHTML= p + " says: " + x
+        let c = document.getElementById("comments")
+        let y = document.getElementById("commentsButton")
+        y.style.display="none"
+        c.style.display="none"
+        
+    }
+	function follow() {
+		let n = prompt("Please enter a username", "")
+		let photoLink = prompt("Please insert an image link")
+		document.getElementById("yourName").innerHTML = n
+		document.getElementById("yourImage").src = photoLink
+	}
+</script>
+</body>
+</html>
