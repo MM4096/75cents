@@ -121,6 +121,9 @@
 			font-size: 20px;
 		}
 		figcaption {
-			background-color: #FFF
+			background-color: #FFF;
+			font-size: 20px;
+			padding: 0;
+			width: auto;
 		}		
 		
