@@ -6,12 +6,13 @@
             border-radius: 50%;
         }
         body {
-            background-color: #09F;
+            background-color: #0AF;
         }
         .indent {
             text-indent: 50px
         }
         .tooltip {
+	    font-size: 20px;
             position: relative;
             display:  inline-block
         }
@@ -67,7 +68,7 @@
 			width: 100%;
 			color: #00f;
 			text-align: center;
-			background-color: #6ff;
+			background-color: #09F;
 		}
 		h1 {
 		background-color: "#000";
@@ -116,5 +117,10 @@
 			-webkit-transform: scale(3);
 			transform: scale(3);
 		}
-		
+		p {
+			font-size: 20px;
+		}
+		figcaption {
+			background-color: #FFF
+		}		
 		
