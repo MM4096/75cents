@@ -1,0 +1,23 @@
+<DOCTYPE html>
+<html>
+<head>
+    <title>Decoder</title>
+
+</head>
+<body>
+    <h1>Input code:</h1>
+    <input id="information" />
+    <button onclick="getAmounts()">Enter</button>
+    <script>
+        function getAmounts() {
+            var input = document.getElementById("information").value;
+            const items = input.split('_');
+            for (var i = 0; i < items.length; i++) {
+                console.log(items[i])
+            }
+            
+
+        }
+    </script>
+</body>
+</html>

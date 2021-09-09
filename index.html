@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+    </style>
+</head>
+<body>
+    <p>Enter send information</p>
+    <div class="grid">
+        <div><p>Item:</p></div>
+        <div><p>Quantity</p></div>
+        <div><label for="option1">Lolly Scramble (4 pack) $1.00</label></div>
+        <div><input id="option1" type="number" onchange="checkSubmit()"/></div>
+        <div><label for="option2">Liquorice Allsorts (3 pack) $1.00</label></div>
+        <div><input id="option2" type="number" onchange="checkSubmit()"/></div>
+        <div><label for="option3">Sour Candy (5 pack) 50&#162;</label></div>
+        <div><input id="option3" type="number" onchange="checkSubmit()" /></div>
+        <div><label for="option4">Chocolate Favorates (1 pack) 50&#162;</label></div>
+        <div><input id="option4" type="number" onchange="checkSubmit()" /></div>
+        <div><label for=" option5">Chupa Chups (1 pack) 50&#162;</label></div>
+        <div><input id="option5" type="number" onchange="checkSubmit()" /></div>
+
+        <div><p>Total:</p></div>
+        <div><p id="totalcost">$0.00</p></div>
+
+    </div>
+    <br />
+    <button onclick="costcalculate()">Calculate Cost</button>
+    <br>
+    <label for="name">Enter your name: </label>
+    <input id="name" onchange="checkSubmit()"/>
+    <br>
+    <label for="class">Enter your class:</label>
+    <select id="class" onchange="checkSubmit()">
+        <option value="null">-SELECT-</option>
+        <option value="bdu">7BDU</option>
+        <option value="cva">7CVA</option>
+        <option value="mdu">7MDU</option>
+        <option value="mle">7MLE</option>
+        <option value="mwe">7MWE</option>
+        <option value="zde">7ZDE</option>
+        <option value="hwh">8HWH</option>
+        <option value="jch">8JCH</option>
+        <option value="jgr">8JGR</option>
+        <option value="jps">8JPS</option>
+        <option value="mvr">8MVR</option>
+        <option value="spo">8SPO</option>
+        <option value="afi">9AFI</option>
+        <option value="bhn">9BHN</option>
+        <option value="cgr">9CGR</option>
+        <option value="htr">9HTR</option>
+        <option value="lst">9LST</option>
+        <option value="pba">9PBA</option>
+        <option value="yne">9YNE</option>
+    </select>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+
+    <input id="information" />
+
+    <br>
+    <button onclick="submit()" id="enterbutton" disabled>Submit</button>
+    <p id="inputinfo"></p>
+    <a href="information.html">What to do next</a>
+    <br />
+    <script>
+        var totalcost;
+        function submit() {
+            var numberOption1 = +document.getElementById("option1").value;
+            var numberOption2 = +document.getElementById("option2").value;
+            var numberOption3 = +document.getElementById("option3").value;
+            var numberOption4 = +document.getElementById("option4").value;
+            var numberOption5 = +document.getElementById("option5").value;
+            var optionblock = document.getElementById("class");
+            var optionselected = optionblock.options[optionblock.selectedIndex].text;
+            var name = document.getElementById("name").value;
+            
+                
+            
+            document.getElementById("information").style.visibility = "initial";
+            document.getElementById("information").value = "Name" + name + "_ class" + optionselected + "_1:" + numberOption1 + "_2:" + numberOption2 + "_3:" + numberOption3 + "_4:" + numberOption4 + "_5:" + numberOption5;
+            let input = document.getElementById("information");
+            window.open('mailto:minecraftmath4096@gmail.com?subject=order&body=copy_and_paste_from_webpage_input_here:');
+            input.select();
+            document.getElementById("inputinfo").innerHTML = "Now press ctrl + c, go to outlook and press ctrl + v then send";
+            
+            
+            
+        }
+        function costcalculate() {
+
+
+            var option1cost = +document.getElementById("option1").value;
+            var option2cost = +document.getElementById("option2").value;
+            var option3cost = +document.getElementById("option3").value * 0.5;
+            var option4cost = +document.getElementById("option4").value * 0.5;
+            var option5cost = +document.getElementById("option5").value * 0.5;
+            totalcost = option1cost + option2cost + option3cost + option4cost + option5cost;
+            document.getElementById("totalcost").innerHTML = "$" + totalcost;
+
+
+        }
+        function checkSubmit() {
+            var optionblock = document.getElementById("class");
+            var button = document.getElementById("enterbutton");
+            var optionselected = optionblock.options[optionblock.selectedIndex].text;
+            var name = document.getElementById("name").value;
+            var numberOption1 = +document.getElementById("option1").value;
+            var numberOption2 = +document.getElementById("option2").value;
+            var numberOption3 = +document.getElementById("option3").value;
+            var numberOption4 = +document.getElementById("option4").value;
+            var numberOption5 = +document.getElementById("option5").value;
+            if ((numberOption1 > 0) && (numberOption2 > 0) && (name.length !== 0) && (optionselected.length !== 8) && (numberOption3 > 0) && (numberOption4 > 0) && (numberOption5 > 0)) {
+                button.disabled = false;
+            } else {
+                button.disabled = true;
+            }
+        }
+    </script>
+</body>
+</html>

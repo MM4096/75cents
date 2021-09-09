@@ -1,0 +1,35 @@
+﻿div p {
+    float: left;
+}
+
+.grid {
+    width: 60%;
+    display: grid;
+    grid-template-columns: 75% 25%;
+    padding: 10px;
+    grid-gap: 5px;
+    background-color: #000000;
+}
+
+    .grid > div {
+        float: left;
+        font-size: 20px;
+        background-color: #FFFFFF
+    }
+
+button {
+    border: 1px solid #000000;
+    background-color: #FFFFFF;
+    padding: 5px 10px;
+    color: #000000;
+}
+
+    button:disabled {
+        color: #999999;
+        border-color: #999999
+    }
+
+a {
+    text-decoration: none;
+    color: black;
+}
