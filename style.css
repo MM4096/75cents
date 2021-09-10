@@ -6,8 +6,8 @@
     width: 60%;
     display: grid;
     grid-template-columns: 75% 25%;
-    padding: 10px;
-    grid-gap: 5px;
+    padding: 3px;
+    grid-gap: 3px;
     background-color: #000000;
 }
 

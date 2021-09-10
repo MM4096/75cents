@@ -12,25 +12,27 @@
         <div><p>Item:</p></div>
         <div><p>Quantity</p></div>
         <div><label for="option1">Lolly Scramble (4 pack) $1.00</label></div>
-        <div><input id="option1" type="number" onchange="checkSubmit()"/></div>
+        <div><input id="option1" type="number" onchange="checkSubmit()" /></div>
         <div><label for="option2">Liquorice Allsorts (3 pack) $1.00</label></div>
-        <div><input id="option2" type="number" onchange="checkSubmit()"/></div>
+        <div><input id="option2" type="number" onchange="checkSubmit()" /></div>
         <div><label for="option3">Sour Candy (5 pack) 50&#162;</label></div>
         <div><input id="option3" type="number" onchange="checkSubmit()" /></div>
         <div><label for="option4">Chocolate Favorates (1 pack) 50&#162;</label></div>
         <div><input id="option4" type="number" onchange="checkSubmit()" /></div>
-        <div><label for=" option5">Chupa Chups (1 pack) 50&#162;</label></div>
+        <div><label for="option5">Chupa Chups (1 pack) 50&#162;</label></div>
         <div><input id="option5" type="number" onchange="checkSubmit()" /></div>
-
+        <div><label for="option6">2022 Calendar $10</label></div>
+        <div><input id="option6" type="number" onchange="checkSubmit()" /></div>
         <div><p>Total:</p></div>
         <div><p id="totalcost">$0.00</p></div>
+
 
     </div>
     <br />
     <button onclick="costcalculate()">Calculate Cost</button>
     <br>
     <label for="name">Enter your name: </label>
-    <input id="name" onchange="checkSubmit()"/>
+    <input id="name" onchange="checkSubmit()" />
     <br>
     <label for="class">Enter your class:</label>
     <select id="class" onchange="checkSubmit()">
@@ -78,21 +80,22 @@
             var numberOption3 = +document.getElementById("option3").value;
             var numberOption4 = +document.getElementById("option4").value;
             var numberOption5 = +document.getElementById("option5").value;
+            var numberOption6 = +document.getElementById("option6").value;
             var optionblock = document.getElementById("class");
             var optionselected = optionblock.options[optionblock.selectedIndex].text;
             var name = document.getElementById("name").value;
-            
-                
-            
+
+
+
             document.getElementById("information").style.visibility = "initial";
-            document.getElementById("information").value = "Name" + name + "_ class" + optionselected + "_1:" + numberOption1 + "_2:" + numberOption2 + "_3:" + numberOption3 + "_4:" + numberOption4 + "_5:" + numberOption5;
+            document.getElementById("information").value = "Name" + name + "_ class" + optionselected + "_1:" + numberOption1 + "_2:" + numberOption2 + "_3:" + numberOption3 + "_4:" + numberOption4 + "_5:" + numberOption5 + "_6:" + numberOption6;
             let input = document.getElementById("information");
             window.open('mailto:minecraftmath4096@gmail.com?subject=order&body=copy_and_paste_from_webpage_input_here:');
             input.select();
             document.getElementById("inputinfo").innerHTML = "Now press ctrl + c, go to outlook and press ctrl + v then send";
-            
-            
-            
+
+
+
         }
         function costcalculate() {
 
@@ -102,7 +105,8 @@
             var option3cost = +document.getElementById("option3").value * 0.5;
             var option4cost = +document.getElementById("option4").value * 0.5;
             var option5cost = +document.getElementById("option5").value * 0.5;
-            totalcost = option1cost + option2cost + option3cost + option4cost + option5cost;
+            var option6cost = +document.getElementById("option6").value * 10;
+            totalcost = option1cost + option2cost + option3cost + option4cost + option5cost + option6cost;
             document.getElementById("totalcost").innerHTML = "$" + totalcost;
 
 
@@ -117,7 +121,8 @@
             var numberOption3 = +document.getElementById("option3").value;
             var numberOption4 = +document.getElementById("option4").value;
             var numberOption5 = +document.getElementById("option5").value;
-            if ((numberOption1 > 0) && (numberOption2 > 0) && (name.length !== 0) && (optionselected.length !== 8) && (numberOption3 > 0) && (numberOption4 > 0) && (numberOption5 > 0)) {
+            var numberOption6 = +document.getElementById("option6").value;
+            if ((numberOption1 > 0) && (numberOption2 > 0) && (name.length !== 0) && (optionselected.length !== 8) && (numberOption3 > 0) && (numberOption4 > 0) && (numberOption5 > 0) && (numberOption6 > 0)) {
                 button.disabled = false;
             } else {
                 button.disabled = true;
