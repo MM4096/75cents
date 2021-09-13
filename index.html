@@ -78,25 +78,31 @@
     <script>
         var totalcost;
         function submit() {
-            var numberOption1 = +document.getElementById("option1").value;
-            var numberOption2 = +document.getElementById("option2").value;
-            var numberOption3 = +document.getElementById("option3").value;
-            var numberOption4 = +document.getElementById("option4").value;
-            var numberOption5 = +document.getElementById("option5").value;
-            var numberOption6 = +document.getElementById("option6").value;
-            var allergy = document.getElementById("allergy").value;
-            var optionblock = document.getElementById("class");
-            var optionselected = optionblock.options[optionblock.selectedIndex].text;
-            var name = document.getElementById("name").value;
+            costcalculate()
+            if (confirm("Please confirm your order total: $" + totalcost)) {
+                var numberOption1 = +document.getElementById("option1").value;
+                var numberOption2 = +document.getElementById("option2").value;
+                var numberOption3 = +document.getElementById("option3").value;
+                var numberOption4 = +document.getElementById("option4").value;
+                var numberOption5 = +document.getElementById("option5").value;
+                var numberOption6 = +document.getElementById("option6").value;
+                var allergy = document.getElementById("allergy").value;
+                var optionblock = document.getElementById("class");
+                var optionselected = optionblock.options[optionblock.selectedIndex].text;
+                var name = document.getElementById("name").value;
 
 
 
-            document.getElementById("information").style.visibility = "initial";
-            document.getElementById("information").value = "Name" + name + "_ class" + optionselected + "_1:" + numberOption1 + "_2:" + numberOption2 + "_3:" + numberOption3 + "_4:" + numberOption4 + "_5:" + numberOption5 + "_6:" + numberOption6 + "_Allergy: " + allergy;
-            let input = document.getElementById("information");
-            window.open('mailto:minecraftmath4096@gmail.com?subject=order&body=copy_and_paste_from_webpage_input_here:');
-            input.select();
-            document.getElementById("inputinfo").innerHTML = "Now press ctrl + c, go to outlook and press ctrl + v then send";
+                document.getElementById("information").style.visibility = "initial";
+                document.getElementById("information").value = "Name" + name + "_ class" + optionselected + "_1:" + numberOption1 + "_2:" + numberOption2 + "_3:" + numberOption3 + "_4:" + numberOption4 + "_5:" + numberOption5 + "_6:" + numberOption6 + "_Allergy: " + allergy;
+                let input = document.getElementById("information");
+                window.open('mailto:minecraftmath4096@gmail.com?subject=order&body=copy_and_paste_from_webpage_input_here:');
+                input.select();
+                document.getElementById("inputinfo").innerHTML = "Now press ctrl + c, go to outlook and press ctrl + v then send";
+            } else {
+                document.getElementById("information").value = "Order Canceled."
+            }
+            
 
 
 
