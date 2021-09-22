@@ -7,6 +7,7 @@
     </style>
 </head>
 <body onload="timeLeft()">
+    <p><strong>PLEASE DO NOT ORDER. THIS WEBPAGE IS STILL UNDER CONSTRUCTION</strong></p>
     <div class="saleBanner" id="saleTime"></div>
 
 
@@ -18,8 +19,8 @@
         <div class="tooltip"><label for="option1">Lolly Scramble (4 pack) 
         <!--For sale, put cost inside strike element. Otherwise, place after element-->
         <!--Cost $1.00-->
-        <strike></strike>
-        $1.00
+        <strike>$1.00</strike>
+        50&#162;
              
         </label><span class="tooltiptext"><img src="lollyScramble.jpg"/></span></div>
 
@@ -27,17 +28,17 @@
 
         <div class="tooltip"><label for="option2">Licorice Allsorts (3 pack)
         <!--Cost $1.00-->
-        <strike></strike>
-        $1.00</label>
-        
-        <span class="tooltiptext"><img src="licoriceAllsorts.jpg" /></span></div>
+        <strike>$1.00</strike>
+        50&#162;
+
+            </label><span class="tooltiptext"><img src="licoriceAllsorts.jpg" /></span></div>
 
         <div><input id="option2" type="number" onchange="checkSubmit()" /></div>
 
         <div class="tooltip"><label for="option3">Sour Candy (5 pack)
         <!--Cost 50c use &#162-->
-        <strike></strike>
-        50&#162;
+        <strike>50&#162;</strike>
+        20&#162
              
         </label><span class="tooltiptext"><img src="sourCandy.jpg" /></span></div>
 
@@ -45,8 +46,8 @@
 
         <div class="tooltip"><label for="option4">Chocolate Favorates (1 bar)
          <!--Cost 50c-->
-        <strike></strike>    
-            50&#162;
+        <strike>50&#162;</strike>    
+            20&#162;
              
         </label><span class="tooltiptext"><img src="chocolateFavorates.jpg" /></span></div>
 
@@ -54,8 +55,8 @@
 
         <div class="tooltip"><label for="option5">Chupa Chups (1 lollipop) 
         <!--Cost 50c-->
-        <strike></strike>
-        50&#162;
+        <strike>50&#162;</strike>
+        20&#162;
              
         </label><span class="tooltiptext"><img src="lollipop.jpg" /></span></div>
 
@@ -63,9 +64,9 @@
 
         <div><label for="option6">2022 Calendar 
         <!--Cost $10-->
-        <strike></strike>    
+        <strike>$10</strike>    
         
-            $10
+            $5
 
             </label></div>
 
@@ -74,8 +75,8 @@
 
         <div><label for="option7">Mystery Box &#215;1 
             <!--Cost $2.50-->
-            <strike></strike>
-            $2.50
+            <strike>$2.50</strike>
+            $1.20
 
             </label></div>
 
@@ -168,13 +169,13 @@
         function costcalculate() {
 
 
-            var option1cost = +document.getElementById("option1").value;
-            var option2cost = +document.getElementById("option2").value;
-            var option3cost = +document.getElementById("option3").value * 0.5;
-            var option4cost = +document.getElementById("option4").value * 0.5;
-            var option5cost = +document.getElementById("option5").value * 0.5;
-            var option6cost = +document.getElementById("option6").value * 10;
-            var option7cost = +document.getElementById("option7").value * 2.5;
+            var option1cost = +document.getElementById("option1").value / 2;
+            var option2cost = +document.getElementById("option2").value / 2;
+            var option3cost = +document.getElementById("option3").value * 0.2;
+            var option4cost = +document.getElementById("option4").value * 0.2;
+            var option5cost = +document.getElementById("option5").value * 0.2;
+            var option6cost = +document.getElementById("option6").value * 5;
+            var option7cost = +document.getElementById("option7").value * 1.2;
             totalcost = option1cost + option2cost + option3cost + option4cost + option5cost + option6cost + option7cost;
             document.getElementById("totalcost").innerHTML = "$" + totalcost;
 
