@@ -64,4 +64,11 @@ a {
 .important {
     color: #FF0000;
 }
-
+.saleBanner {
+    background-color: #FF0000;
+    width: auto;
+    height: 100px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+}

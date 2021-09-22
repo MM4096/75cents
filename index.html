@@ -6,26 +6,83 @@
     <style>
     </style>
 </head>
-<body>
-    <p>Enter send information</p>
+<body onload="timeLeft()">
+    <div class="saleBanner" id="saleTime"></div>
+
+
+
+
     <div class="grid">
         <div><p>Item:</p></div>
         <div><p>Quantity</p></div>
-        <div class="tooltip"><label for="option1">Lolly Scramble (4 pack) $1.00</label><span class="tooltiptext"><img src="lollyScramble.jpg"/></span></div>
+        <div class="tooltip"><label for="option1">Lolly Scramble (4 pack) 
+        <!--For sale, put cost inside strike element. Otherwise, place after element-->
+        <!--Cost $1.00-->
+        <strike></strike>
+        $1.00
+             
+        </label><span class="tooltiptext"><img src="lollyScramble.jpg"/></span></div>
+
         <div><input id="option1" type="number" onchange="checkSubmit()" /></div>
-        <div class="tooltip"><label for="option2">Licorice Allsorts (3 pack) $1.00</label><span class="tooltiptext"><img src="licoriceAllsorts.jpg" /></span></div>
+
+        <div class="tooltip"><label for="option2">Licorice Allsorts (3 pack)
+        <!--Cost $1.00-->
+        <strike></strike>
+        $1.00</label>
+        
+        <span class="tooltiptext"><img src="licoriceAllsorts.jpg" /></span></div>
+
         <div><input id="option2" type="number" onchange="checkSubmit()" /></div>
-        <div class="tooltip"><label for="option3">Sour Candy (5 pack) 50&#162;</label><span class="tooltiptext"><img src="sourCandy.jpg" /></span></div>
+
+        <div class="tooltip"><label for="option3">Sour Candy (5 pack)
+        <!--Cost 50c use &#162-->
+        <strike></strike>
+        50&#162;
+             
+        </label><span class="tooltiptext"><img src="sourCandy.jpg" /></span></div>
+
         <div><input id="option3" type="number" onchange="checkSubmit()" /></div>
-        <div class="tooltip"><label for="option4">Chocolate Favorates (1 bar) 50&#162;</label><span class="tooltiptext"><img src="chocolateFavorates.jpg" /></span></div>
+
+        <div class="tooltip"><label for="option4">Chocolate Favorates (1 bar)
+         <!--Cost 50c-->
+        <strike></strike>    
+            50&#162;
+             
+        </label><span class="tooltiptext"><img src="chocolateFavorates.jpg" /></span></div>
+
         <div><input id="option4" type="number" onchange="checkSubmit()" /></div>
-        <div class="tooltip"><label for="option5">Chupa Chups (1 lollipop) 50&#162;</label><span class="tooltiptext"><img src="lollipop.jpg" /></span></div>
+
+        <div class="tooltip"><label for="option5">Chupa Chups (1 lollipop) 
+        <!--Cost 50c-->
+        <strike></strike>
+        50&#162;
+             
+        </label><span class="tooltiptext"><img src="lollipop.jpg" /></span></div>
+
         <div><input id="option5" type="number" onchange="checkSubmit()" /></div>
-        <div><label for="option6">2022 Calendar $10</label></div>
+
+        <div><label for="option6">2022 Calendar 
+        <!--Cost $10-->
+        <strike></strike>    
+        
+            $10
+
+            </label></div>
+
         <div><input id="option6" type="number" onchange="checkSubmit()" /></div>
-        <div><label for="option7">Mystery Box &#215;1 $2.50</label></div>
+
+
+        <div><label for="option7">Mystery Box &#215;1 
+            <!--Cost $2.50-->
+            <strike></strike>
+            $2.50
+
+            </label></div>
+
         <div><input id="option7" type="number" onchange="checkSubmit()"/></div>
+
         <div><p>Total:</p></div>
+
         <div><p id="totalcost">$0.00</p></div>
 
     </div>
@@ -140,6 +197,39 @@
             } else {
                 button.disabled = true;
             }
+        }
+        window.onload = function () {
+            setInterval(timeLeft(), 10000);
+        };
+        function timeLeft() {
+            // Set the date we're counting down to
+            var countDownDate = new Date("Sep 23, 2021 15:37:25").getTime();
+
+            // Update the count down every 1 second
+            var x = setInterval(function () {
+
+                // Get today's date and time
+                var now = new Date().getTime();
+
+                // Find the distance between now and the count down date
+                var distance = countDownDate - now;
+
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Output the result in an element with id="demo"
+                document.getElementById("saleTime").innerHTML ="Sale! 50% off<br>Time Left: "+ days + "d " + hours + "h "
+                    + minutes + "m " + seconds + "s ";
+
+                // If the count down is over, write some text 
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("saleTime").innerHTML = "Sale Ended";
+                }
+            }, 1000);
         }
     </script>
     
