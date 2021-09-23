@@ -60,6 +60,8 @@ a {
     text-decoration: none;
     color: black;
     background-color: none;
+    border: 1px solid #000000;
+    padding: 5px 5px 5px 5px;
 }
 .important {
     color: #FF0000;

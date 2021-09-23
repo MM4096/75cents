@@ -24,7 +24,7 @@
              
         </label><span class="tooltiptext"><img src="lollyScramble.jpg"/></span></div>
 
-        <div><input id="option1" type="number" onchange="checkSubmit()" /></div>
+        <div><input id="option1" type="number" onchange="checkSubmit()" value="0"/></div>
 
         <div class="tooltip"><label for="option2">Licorice Allsorts (3 pack)
         <!--Cost $1.00-->
@@ -33,7 +33,7 @@
 
             </label><span class="tooltiptext"><img src="licoriceAllsorts.jpg" /></span></div>
 
-        <div><input id="option2" type="number" onchange="checkSubmit()" /></div>
+        <div><input id="option2" type="number" onchange="checkSubmit()" value="0"/></div>
 
         <div class="tooltip"><label for="option3">Sour Candy (5 pack)
         <!--Cost 50c use &#162-->
@@ -42,7 +42,7 @@
              
         </label><span class="tooltiptext"><img src="sourCandy.jpg" /></span></div>
 
-        <div><input id="option3" type="number" onchange="checkSubmit()" /></div>
+        <div><input id="option3" type="number" onchange="checkSubmit()" value="0"/></div>
 
         <div class="tooltip"><label for="option4">Chocolate Favorates (1 bar)
          <!--Cost 50c-->
@@ -51,16 +51,16 @@
              
         </label><span class="tooltiptext"><img src="chocolateFavorates.jpg" /></span></div>
 
-        <div><input id="option4" type="number" onchange="checkSubmit()" /></div>
+        <div><input id="option4" type="number" onchange="checkSubmit()" value="0"/></div>
 
         <div class="tooltip"><label for="option5">Chupa Chups (1 lollipop) 
         <!--Cost 50c-->
         <strike></strike>
         50&#162;
              
-        </label><span class="tooltiptext"><img src="lollipop.jpg" /></span></div>
+        </label><span class="tooltiptext"><img src="lollipop.jpg"/></span></div>
 
-        <div><input id="option5" type="number" onchange="checkSubmit()" /></div>
+        <div><input id="option5" type="number" onchange="checkSubmit()" value="0"/></div>
 
         <div><label for="option6">2022 Calendar 
         <!--Cost $5-->
@@ -70,7 +70,7 @@
 
             </label></div>
 
-        <div><input id="option6" type="number" onchange="checkSubmit()" /></div>
+        <div><input id="option6" type="number" onchange="checkSubmit()" value="0"/></div>
 
 
         <div><label for="option7">Mystery Box &#215;1 
@@ -80,7 +80,7 @@
 
             </label></div>
 
-        <div><input id="option7" type="number" onchange="checkSubmit()"/></div>
+        <div><input id="option7" type="number" onchange="checkSubmit()" value="0"/></div>
 
         <div><p>Total:</p></div>
 
@@ -88,7 +88,7 @@
 
     </div>
     <br />
-    <button target="_blank" onclick="location.href = 'view.html';" class="important">View Options</button>
+    <a href="view.html" target="_blank">View Options</a>
     <br />
     <button onclick="costcalculate()">Calculate Cost</button>
     <br>
@@ -123,15 +123,14 @@
     <br>
     <br>
     <p class="important"><strong>IMPORTANT:</strong> please list your allergies below (We will notify you if your order contains your allergy) </p>
-    <textarea rows="10" cols="20" id="allergy"></textarea>
+    <textarea rows="10" cols="40" id="allergy"></textarea>
     <br />
 
-    <input id="information" />
 
     <br>
-    <button onclick="submit()" id="enterbutton" disabled>Submit</button>
+    <button onclick="submit(); return false" id="enterbutton" disabled>Submit</button>
     <p id="inputinfo"></p>
-    <a href="information.html">What to do next</a>
+    <a href="information.html" target="_blank">What to do next</a>
     <br />
     <script>
         var totalcost;
@@ -150,14 +149,12 @@
                 var optionselected = optionblock.options[optionblock.selectedIndex].text;
                 var name = document.getElementById("name").value;
 
-
-
-                document.getElementById("information").style.visibility = "initial";
-                document.getElementById("information").value = "Name" + name + "_ class" + optionselected + "_1:" + numberOption1 + "_2:" + numberOption2 + "_3:" + numberOption3 + "_4:" + numberOption4 + "_5:" + numberOption5 + "_6:" + numberOption6 + "_7:" + numberOption7 + "_Allergy: " + allergy;
-                let input = document.getElementById("information");
-                window.open('mailto:minecraftmath4096@gmail.com?subject=order&body=copy_and_paste_from_webpage_input_here:');
-                input.select();
-                document.getElementById("inputinfo").innerHTML = "Now press ctrl + c, go to outlook and press ctrl + v then send";
+                var emailInfo = "Name" + name + "_ class" + optionselected + "_1:" + numberOption1 + "_2:" + numberOption2 + "_3:" + numberOption3 + "_4:" + numberOption4 + "_5:" + numberOption5 + "_6:" + numberOption6 + "_7:" + numberOption7 + "_Allergy: " + allergy;
+                var emailSend = "mailto:minecraftmath4096@gmail.com"
+                    + "?cc=minecraftmath4096@gmail.com"
+                    + "&subject=" + encodeURIComponent("Order")
+                    + "&body=" + encodeURIComponent(emailInfo + "\r\rNow press <SEND>");
+                window.location.href = emailSend;
             } else {
                 document.getElementById("information").value = "Order Canceled."
             }
@@ -169,13 +166,13 @@
         function costcalculate() {
 
 
-            var option1cost = +document.getElementById("option1").value / 2;
-            var option2cost = +document.getElementById("option2").value / 2;
-            var option3cost = +document.getElementById("option3").value * 0.2;
-            var option4cost = +document.getElementById("option4").value * 0.2;
-            var option5cost = +document.getElementById("option5").value * 0.2;
-            var option6cost = +document.getElementById("option6").value * 2.5;
-            var option7cost = +document.getElementById("option7").value * 1.2;
+            var option1cost = +document.getElementById("option1").value * 1;
+            var option2cost = +document.getElementById("option2").value * 1;
+            var option3cost = +document.getElementById("option3").value * 0.5;
+            var option4cost = +document.getElementById("option4").value * 0.5;
+            var option5cost = +document.getElementById("option5").value * 0.5;
+            var option6cost = +document.getElementById("option6").value * 5;
+            var option7cost = +document.getElementById("option7").value * 2.5;
             totalcost = option1cost + option2cost + option3cost + option4cost + option5cost + option6cost + option7cost;
             document.getElementById("totalcost").innerHTML = "$" + totalcost;
 
@@ -186,6 +183,7 @@
             var button = document.getElementById("enterbutton");
             var optionselected = optionblock.options[optionblock.selectedIndex].text;
             var name = document.getElementById("name").value;
+            // All below is seeing weather you haven't ordered
             var numberOption1 = +document.getElementById("option1").value;
             var numberOption2 = +document.getElementById("option2").value;
             var numberOption3 = +document.getElementById("option3").value;
@@ -193,7 +191,7 @@
             var numberOption5 = +document.getElementById("option5").value;
             var numberOption6 = +document.getElementById("option6").value;
             var numberOption7 = +document.getElementById("option7").value
-            if ((numberOption1 > -1) && (numberOption2 > -1) && (name.length !== 0) && (optionselected.length !== 8) && (numberOption3 > -1) && (numberOption4 > -1) && (numberOption5 > -1) && (numberOption6 > -1) && (numberOption7 > -1)) {
+            if ((numberOption1 > -1) && (numberOption2 > -1) && (name.length !== 0) && (optionselected.length !== 8) && ((numberOption3 > 0) || (numberOption4 > 0) || (numberOption5 > 0) || (numberOption6 > 0) || (numberOption7 > 0))) {
                 button.disabled = false;
             } else {
                 button.disabled = true;
@@ -221,11 +219,11 @@
                 var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                // Output the result in an element with id="demo"
+                // Output the result in a div
                 document.getElementById("saleTime").innerHTML ="<h2>Sale! 50% off</h2><br>Time Left: "+ days + "d " + hours + "h "
                     + minutes + "m " + seconds + "s ";
 
-                // If the count down is over, write some text 
+                // If the countdown is over, hide element
                 if (distance < 0) {
                     clearInterval(x);
                     document.getElementById("saleTime").style.visibility = "hidden";
