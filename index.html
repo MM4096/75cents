@@ -19,8 +19,8 @@
         <div class="tooltip"><label for="option1">Lolly Scramble (4 pack) 
         <!--For sale, put cost inside strike element. Otherwise, place after element-->
         <!--Cost $1.00-->
-        <strike>$1.00</strike>
-        50&#162;
+        <strike></strike>
+        $1.00
              
         </label><span class="tooltiptext"><img src="lollyScramble.jpg"/></span></div>
 
@@ -28,8 +28,8 @@
 
         <div class="tooltip"><label for="option2">Licorice Allsorts (3 pack)
         <!--Cost $1.00-->
-        <strike>$1.00</strike>
-        50&#162;
+        <strike></strike>
+        $1.00
 
             </label><span class="tooltiptext"><img src="licoriceAllsorts.jpg" /></span></div>
 
@@ -37,8 +37,8 @@
 
         <div class="tooltip"><label for="option3">Sour Candy (5 pack)
         <!--Cost 50c use &#162-->
-        <strike>50&#162;</strike>
-        20&#162
+        <strike></strike>
+        50&#162
              
         </label><span class="tooltiptext"><img src="sourCandy.jpg" /></span></div>
 
@@ -46,8 +46,8 @@
 
         <div class="tooltip"><label for="option4">Chocolate Favorates (1 bar)
          <!--Cost 50c-->
-        <strike>50&#162;</strike>    
-            20&#162;
+        <strike></strike>    
+            50&#162;
              
         </label><span class="tooltiptext"><img src="chocolateFavorates.jpg" /></span></div>
 
@@ -55,8 +55,8 @@
 
         <div class="tooltip"><label for="option5">Chupa Chups (1 lollipop) 
         <!--Cost 50c-->
-        <strike>50&#162;</strike>
-        20&#162;
+        <strike></strike>
+        50&#162;
              
         </label><span class="tooltiptext"><img src="lollipop.jpg" /></span></div>
 
@@ -64,9 +64,9 @@
 
         <div><label for="option6">2022 Calendar 
         <!--Cost $5-->
-        <strike>$5</strike>    
+        <strike></strike>    
         
-            $2.50
+            $5.00
 
             </label></div>
 
@@ -75,8 +75,8 @@
 
         <div><label for="option7">Mystery Box &#215;1 
             <!--Cost $2.50-->
-            <strike>$2.50</strike>
-            $1.20
+            <strike></strike>
+            $2.50
 
             </label></div>
 
@@ -204,7 +204,7 @@
         };
         function timeLeft() {
             // Set the date we're counting down to
-            var countDownDate = new Date("Sep 23, 2021 15:37:25").getTime();
+            var countDownDate = new Date("Sep 23, 2021 12:37:25").getTime();
 
             // Update the count down every 1 second
             var x = setInterval(function () {
@@ -222,13 +222,13 @@
                 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
                 // Output the result in an element with id="demo"
-                document.getElementById("saleTime").innerHTML ="Sale! 50% off<br>Time Left: "+ days + "d " + hours + "h "
+                document.getElementById("saleTime").innerHTML ="<h2>Sale! 50% off</h2><br>Time Left: "+ days + "d " + hours + "h "
                     + minutes + "m " + seconds + "s ";
 
                 // If the count down is over, write some text 
                 if (distance < 0) {
                     clearInterval(x);
-                    document.getElementById("saleTime").innerHTML = "Sale Ended";
+                    document.getElementById("saleTime").style.visibility = "hidden";
                 }
             }, 1000);
         }
