@@ -63,10 +63,10 @@
         <div><input id="option5" type="number" onchange="checkSubmit()" /></div>
 
         <div><label for="option6">2022 Calendar 
-        <!--Cost $10-->
-        <strike>$10</strike>    
+        <!--Cost $5-->
+        <strike>$5</strike>    
         
-            $5
+            $2.50
 
             </label></div>
 
@@ -174,7 +174,7 @@
             var option3cost = +document.getElementById("option3").value * 0.2;
             var option4cost = +document.getElementById("option4").value * 0.2;
             var option5cost = +document.getElementById("option5").value * 0.2;
-            var option6cost = +document.getElementById("option6").value * 5;
+            var option6cost = +document.getElementById("option6").value * 2.5;
             var option7cost = +document.getElementById("option7").value * 1.2;
             totalcost = option1cost + option2cost + option3cost + option4cost + option5cost + option6cost + option7cost;
             document.getElementById("totalcost").innerHTML = "$" + totalcost;
