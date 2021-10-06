@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="logo.jpg" />
+    <script src="script.js"></script>
+    <style>
+    </style>
+</head>
+<body onload="fillIn()">
+    <div class="navbar">
+        <img src="logo.jpg" />
+        <a href="index.html">75 Cents</a>
+        <a href="index.html">Home</a>
+        <a href="cart.html">Cart</a>
+    </div>
+
+
+    <h3>CART</h3>
+    <p>Your cart contains: </p>
+    <br />
+    <div class="gridContainer">
+        <div class="gridItem"><label for="option1">Lolly Scrambles</label></div>
+        <div class="gridItem" onchange="updateAllCookies()"><input id="option1" type="number" /></div>
+        <div class="gridItem"><label for="option2">Licorice Allsorts</label></div>
+        <div class="gridItem" onchange="updateAllCookies()"><input id="option2" type="number" /></div>
+        <div class="gridItem"><label for="option3">Chocolate Favorates</label></div>
+        <div class="gridItem" onchange="updateAllCookies()"><input id="option3" type="number" /></div>
+        <div class="gridItem"><label for="option4">Chupa Chups</label></div>
+        <div class="gridItem" onchange="updateAllCookies()"><input id="option4" type="number" /></div>
+        <div class="gridItem"><label for="option5">Sour Candy</label></div>
+        <div class="gridItem" onchange="updateAllCookies()"><input id="option5" type="number" /></div>
+        <div class="gridItem"><p>Total:</p></div>
+        <div class="gridItem" id="total">$0</div>
+
+    </div>
+
+
+
+    <button onclick="sendOrder()">Check Out</button>
+
+
+
+
+
+</body>
+</html>

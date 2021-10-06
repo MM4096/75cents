@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>View Item > Chupa Chups</title>
+    <script src="script.js"></script>
+    <link rel="shortcut icon" href="logo.jpg" />
+</head>
+<body>
+    <div class="navbar">
+        <img src="logo.jpg" />
+        <a href="index.html">75 Cents</a>
+        <a href="index.html">Home</a>
+        <a href="cart.html">Cart</a>
+    </div>
+    <div class="postContainer">
+        <div class="postThumb">
+            <img src="lollipop.jpg" />
+        </div>
+        <div class="postContent">
+            <h3>1 Chupa Chup lollipop</h3>
+            <p>1 Chupa Chup lollipop contains 1 of the following:</p>
+            <ul>
+                <li>Cola</li>
+                <li>Strawberry</li>
+                <li>Watermelon</li>
+                <li>Grape</li>
+                <li>Strawberry & Cream</li>
+            </ul>
+            <br />
+            <p>Allergies:</p>
+            <ul>
+                <li>Whey</li>
+                <li>Diary</li>
+            </ul>
+            <br />
+            <p>Cost: 50&#162;</p>
+            <input type="number" onchange="calculateCost(4)" id="qty" /><button id="cost" onclick="updateCookie('item4')">Add 0 to cart for $0</button>
+        </div>
+    </div>
+</body>
+</html>

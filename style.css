@@ -21,51 +21,40 @@
         visibility: visible;
     }
 
-div p {
-    float: left;
-}
-
-.grid {
-    width: 60%;
-    display: grid;
-    grid-template-columns: 75% 25%;
-    padding: 3px;
-    grid-gap: 3px;
-    background-color: #000000;
-}
-
-    .grid > div {
-        float: left;
-        font-size: 20px;
-        background-color: #FFFFFF
-    }
-    div img {
-        width:200px;
-        height: 200px;
-    }
-
 button {
+    border: 1px solid #000000;
+    background-color: #FFFFFF;
+    padding: 5px 10px;
+    color: #000000;
+    cursor: pointer;
+}
+
+    button:active {
+        border: 5px solid #000000;
+    }
+
+input {
     border: 1px solid #000000;
     background-color: #FFFFFF;
     padding: 5px 10px;
     color: #000000;
 }
 
-    button:disabled {
-        color: #999999;
-        border-color: #999999
-    }
+button:disabled {
+    color: #999999;
+    border-color: #999999
+}
 
 a {
     text-decoration: none;
     color: black;
     background-color: none;
-    border: 1px solid #000000;
-    padding: 5px 5px 5px 5px;
 }
+
 .important {
     color: #FF0000;
 }
+
 .saleBanner {
     background-color: #FF0000;
     width: auto;
@@ -74,3 +63,100 @@ a {
     color: #ffffff;
     font-weight: bold;
 }
+
+.orderItemContainer {
+    margin: 20px 20px 0 0;
+    border: 5px solid #333333;
+    overflow: auto;
+}
+/*Thumb short for thumbnail*/
+.postThumb {
+    float: left;
+}
+
+    .postThumb img {
+        display: block;
+        width: 500px;
+        height: 500px;
+    }
+
+.postContent {
+    margin-left: 510px
+}
+
+.postTitle {
+    font-weight: bold;
+    font-size: 200%;
+    padding: 9px;
+    background: #ccc;
+}
+
+.cookieAccept {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: yellow;
+}
+
+.itemView {
+    display: inline-block;
+    margin: 10px 10px;
+    border: 1px solid #000000;
+    width: 100px;
+    cursor: pointer;
+}
+
+    .itemView img {
+        width: 100px;
+        height: 100px;
+        margin: 0px 0px;
+        padding: 0px 0px;
+    }
+
+    .itemView p {
+        padding: 0px 0px;
+        margin: 0px, 0px;
+        text-overflow: ellipsis;
+        width: 100px;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .navbar {
+        overflow: hidden;
+        background-color: #ffff00;
+        display: inline-block;
+        width: 100%;
+    }
+    .navbar a {
+        float: left;
+        display: block;
+        background-color: #ffff00;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        color: #000000;
+    }
+    .navbar a:hover {
+        background-color: #999900;
+        color: #ffffff;
+    }
+    .navbar img {
+        margin: 1px 1px;
+        width: 44px;
+        height: 44px;
+        float: left;
+    }
+    /*The below is for grid*/
+    .gridContainer {
+        display: grid;
+        grid-template-columns: auto auto;
+        padding: 10px
+    }
+    .gridItem {
+        border: 1px solid #000000;
+        padding: 20px;
+        font-size: 20px;
+        text-align: center;
+    }
