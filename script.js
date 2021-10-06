@@ -74,7 +74,12 @@ function calculateCost(itemNumber) {
     document.getElementById("cost").innerHTML = "Add " + numberItems + " to cart for $" + totalCost;
 }
 function updateCookie(cookieName) {
-    setCookie(cookieName, numberItems, 365);
+    if (numberItems > -1) {
+        setCookie(cookieName, numberItems, 365);
+    } else {
+        console.log("A problem occured. Reason #0011 - Updated <BLANK>")
+    }
+    
 
 }
 function cookieFooterToggle() {

@@ -143,9 +143,9 @@ a {
         color: #ffffff;
     }
     .navbar img {
-        margin: 1px 1px;
-        width: 44px;
-        height: 44px;
+        margin: 0 0;
+        width: 95px;
+        height: 45px;
         float: left;
     }
     /*The below is for grid*/
