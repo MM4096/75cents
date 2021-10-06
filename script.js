@@ -75,7 +75,9 @@ function calculateCost(itemNumber) {
 }
 function updateCookie(cookieName) {
     if (numberItems > -1) {
-        setCookie(cookieName, numberItems, 365);
+        var addedItems = parseInt(getCookie(cookieName));
+
+        setCookie(cookieName, numberItems += addedItems, 365);
     } else {
         console.log("A problem occured. Reason #0011 - Updated <BLANK>")
     }
