@@ -76,12 +76,12 @@ function calculateCost(itemNumber) {
 function updateCookie(cookieName) {
     var cookies = getCookie("cookiesEnabled");
     if (cookies == "1") {
-        if (numberItems > -1) {
+        if (numberItems > -1 && Math.round(numberItems) != numberItems) {
             var addedItems = parseInt(getCookie(cookieName));
 
             setCookie(cookieName, numberItems += addedItems, 365);
         } else {
-            window.alert("Unable to update cart. Reason #0011 - Updated Negative or Zero value")
+            window.alert("Unable to update cart. Reason #0011 - Updated invalid value")
         }
     } else {
         window.alert("Unable to update cart. Reason #0100 - Cookies not enabled.")
