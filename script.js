@@ -76,7 +76,7 @@ function calculateCost(itemNumber) {
 function updateCookie(cookieName) {
     var cookies = getCookie("cookiesEnabled");
     if (cookies == "1") {
-        if (numberItems > -1 && Math.round(numberItems) != numberItems) {
+        if (numberItems > -1 && Math.round(numberItems) == numberItems) {
             var addedItems = parseInt(getCookie(cookieName));
 
             setCookie(cookieName, numberItems += addedItems, 365);
