@@ -57,12 +57,12 @@ function getCookieValue(cookieName) {
 function calculateCost(itemNumber) {
     const costs = [
         0,
-        //cost of item 1
+        //cost of item 1 init 1
         1, //lolly scramble
         //cost of item 2
         1, //licorice allsorts
         //cost of item 3
-        0.5, // Chocolate favorates
+        0.5, // Chocolate favorates init 0.5
         //cost of item 4
         0.5, //chupa chups
         //cost of item 5
@@ -128,16 +128,16 @@ function calculateCostRedirect() {
     }
     const costs = [
         0,
-        //cost of item 1
-        1, //lolly scramble
+        //cost of item 1 init 1
+        1, //lolly scramble init 1
         //cost of item 2
-        1, //licorice allsorts
+        1, //licorice allsorts init 1
         //cost of item 3
-        0.5, // Chocolate favorates
+        0.5, // Chocolate favorates init 0.5
         //cost of item 4
-        0.5, //chupa chups
+        0.5, //chupa chups init 0.5
         //cost of item 5
-        0.5, //Sour candy
+        0.5, //Sour candy init 0.5
     ]
     let eachOrderCost = [];
     for (var a = 1; a < 6; a++) {
@@ -183,3 +183,34 @@ function sendOrder() {
     }
     
 }
+//thanks to w3schools.com for the countdown code
+// Set the date we're counting down to
+var countDownDate = new Date("October 12, 2021 13:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function () {
+
+    // Get today's date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Output the result in an element with id="demo"
+    document.getElementById("timeLeft").innerHTML = days + "d " + hours + "h "
+        + minutes + "m " + seconds + "s ";
+
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("salesCountdown").style.display = "none";
+    } else {
+        document.getElementById("salesCountdown").style.display = "block";
+    }
+}, 1000);

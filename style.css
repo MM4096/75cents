@@ -160,3 +160,22 @@ a {
         font-size: 20px;
         text-align: center;
     }
+    #salesCountdown {
+        background-color: #FFFF00;
+        color: #000000;
+        text-align: center;
+    }
+    #salesCountdown h2 {
+        font-family: Arial, sans-serif;
+        font-size: 24px;
+    }
+    #salesCountdown h3 {
+        font-family: 'Brush Script MT', cursive;
+        font-size: 18.72px;
+    }
+    #salesCountdown p {
+        font-size: 18px;
+    }
+    #salesCountdown h6 {
+        font-size: 0px;
+    }
