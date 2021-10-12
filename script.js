@@ -156,14 +156,19 @@ function calculateCostRedirect() {
 function sendOrder() {
     let itemQuantity = [];
     var sendString;
+    //boolean
+    var ableToSend = 1;
     for (var i = 1; i < 6; i++) {
         itemQuantity[i] = document.getElementById("option" + i).value;
+        if (itemQuantity[i] < 0 || Math.round(itemQuantity[i]) == itemQuantity[i]) {
+            ableToSend = 0;
+        }
     }
     sendString = itemQuantity.join();
     var name = prompt("Please enter your name", getCookie("savedName"))
     var formClass = prompt("Please enter your form class", getCookie('formClass'));
     if (name != null || formClass != null) {
-        if (name != "" && formClass != "") {
+        if (name != "" || formClass != "" || ableToSend == 0) {
             if (sendString != ",0,0,0,0,0") {
                 setCookie("formClass", formClass, 365);
                 setCookie("savedName", name, 365);
@@ -180,7 +185,7 @@ function sendOrder() {
             }
         }
         else {
-            window.alert("Your Order was cancelled. Reason: #0001 - Expected answer, recieved 'null'")
+            window.alert("Your Order was cancelled. Reason: #0001 - Unexpected Answer")
         }
     } else {
         window.alert("Your Order was cancelled. Reason: #0101 - Order Canceled.")
