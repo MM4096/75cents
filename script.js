@@ -214,7 +214,8 @@ var x = setInterval(function () {
 
     // If the count down is over, write some text 
     //Run the following code only if it is index.html
-    if (window.location.href.indexOf("index") > 1) {
+    var p = window.location.pathname;
+    if (p.length === 0 || p === "/" || p.match(/^\/?index/)) {
         if (distance < 0) {
             clearInterval(x);
             document.getElementById("salesCountdown").style.display = "none";
