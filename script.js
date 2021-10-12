@@ -213,12 +213,16 @@ var x = setInterval(function () {
     
 
     // If the count down is over, write some text 
-    if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("salesCountdown").style.display = "none";
-    } else {
-        document.getElementById("salesCountdown").style.display = "block";
-        document.getElementById("timeLeft").innerHTML = days + "d " + hours + "h "
-            + minutes + "m " + seconds + "s ";
+    //Run the following code only if it is index.html
+    if (window.location.href.indexOf("index") > 1) {
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("salesCountdown").style.display = "none";
+        } else {
+            document.getElementById("salesCountdown").style.display = "block";
+            document.getElementById("timeLeft").innerHTML = days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s ";
+        }
     }
+    
 }, 1000);
