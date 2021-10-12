@@ -168,7 +168,7 @@ function sendOrder() {
     var name = prompt("Please enter your name", getCookie("savedName"))
     var formClass = prompt("Please enter your form class", getCookie('formClass'));
     if (name != null || formClass != null) {
-        if (name != "" || formClass != "" || ableToSend == 0) {
+        if (name != "" || formClass != "" || ableToSend != 0) {
             if (sendString != ",0,0,0,0,0") {
                 setCookie("formClass", formClass, 365);
                 setCookie("savedName", name, 365);
@@ -210,10 +210,7 @@ var x = setInterval(function () {
     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    // Output the result in an element with id="demo"
-    document.getElementById("timeLeft").innerHTML = days + "d " + hours + "h "
-        + minutes + "m " + seconds + "s ";
+    
 
     // If the count down is over, write some text 
     if (distance < 0) {
@@ -221,5 +218,7 @@ var x = setInterval(function () {
         document.getElementById("salesCountdown").style.display = "none";
     } else {
         document.getElementById("salesCountdown").style.display = "block";
+        document.getElementById("timeLeft").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
     }
 }, 1000);
