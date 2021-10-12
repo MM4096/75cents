@@ -194,7 +194,7 @@ function sendOrder() {
 }
 //thanks to w3schools.com for the countdown code
 // Set the date we're counting down to
-var countDownDate = new Date("October 12, 2021 13:37:25").getTime();
+var countDownDate = new Date("October 20, 2021 13:37:25").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function () {
