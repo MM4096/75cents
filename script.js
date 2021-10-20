@@ -72,17 +72,6 @@ function calculateCost(itemNumber) {
     numberItems = +document.getElementById("qty").value;
     totalCost = itemCost * numberItems;
     document.getElementById("cost").innerHTML = "Add " + numberItems + " to cart for $" + totalCost;
-    var currentNewCartItems = Number(getCookie("newItems"));
-    var newCartItems = currentNewCartItems + numberItems;
-    if (newCartItems > 0) {
-        document.getElementById("newCartItems").style.display = "block";
-        document.getElementById("newCartItems").innerHTML = "";
-        let newElement = document.createElement("p");
-        newElement.append(newCartItems.toString() + " new items")
-        document.getElementById("newCartItems").innerHTML = newElement;
-    }
-    setCookie("newItems", newCartItems, 7);
-}
 function updateCookie(cookieName) {
     var cookies = getCookie("cookiesEnabled");
     if (cookies == "1") {
@@ -96,6 +85,14 @@ function updateCookie(cookieName) {
     } else {
         window.alert("Unable to update cart. Reason #0100 - Cookies not enabled.")
     }
+    var currentNewCartItems = Number(getCookie("newItems"));
+    var newCartItems = currentNewCartItems + numberItems;
+    if (newCartItems > 0) {
+        document.getElementById("newCartItems").style.display = "block";
+        document.getElementById("newCartItems").innerHTML = newCartItems + "<p> new items</p>";
+    }
+    setCookie("newItems", newCartItems, 7);
+}
     
     
 
