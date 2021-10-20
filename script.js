@@ -69,6 +69,7 @@ function calculateCost(itemNumber) {
         0.5, //Sour candy
     ]
     itemCost = costs[itemNumber];
+    numberItems = 0;
     numberItems = parseInt(document.getElementById("qty").value);
     totalCost = itemCost * numberItems;
     document.getElementById("cost").innerHTML = "Add " + numberItems + " to cart for $" + totalCost;
