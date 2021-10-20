@@ -114,7 +114,7 @@ function fillIn() {
         var redirectDestination = "option" + i;
         getCookiePush(itemName, redirectDestination)
     }
-    document.getElementById("newCartItems").style.display = "none";
+    document.getElementById("newCartItems").style.display = "none"
 }
 function getCookiePush(cookieName, redirectDestination) {
 
