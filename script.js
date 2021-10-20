@@ -78,7 +78,7 @@ function calculateCost(itemNumber) {
         document.getElementById("newCartItems").style.display = "block";
         document.getElementById("newCartItems").innerHTML = "";
         let newElement = document.createElement("p");
-        newElement.append(newCartItems + " new items")
+        newElement.append(newCartItems.toString() + " new items")
         document.getElementById("newCartItems").innerHTML = newElement;
     }
     setCookie("newItems", newCartItems, 7);
