@@ -91,7 +91,7 @@ function updateCookie(cookieName) {
     var currentNewCartItems = parseInt(getCookie("newItems"));
     var newCartItems = currentNewCartItems + numberItems;
     if (newCartItems > 0) {
-        document.getElementById("newCartItems").style.display = "block";
+        document.getElementById("newCartItems").style.display = "inline-block";
         document.getElementById("newCartItems").innerText = newCartItems + " new items";
         setCookie("newItems", newCartItems, 7);
     }
