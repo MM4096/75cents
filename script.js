@@ -1,7 +1,7 @@
 
 var allowCookies = 0;
 var itemCost;
-var numberItems;
+var numberItems = 0;
 var totalCost;
 var currentTotal
 function accepted() {
@@ -69,7 +69,7 @@ function calculateCost(itemNumber) {
         0.5, //Sour candy
     ]
     itemCost = costs[itemNumber];
-    numberItems = +document.getElementById("qty").value;
+    numberItems = parseInt(document.getElementById("qty").value);
     totalCost = itemCost * numberItems;
     document.getElementById("cost").innerHTML = "Add " + numberItems + " to cart for $" + totalCost;
 }
