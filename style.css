@@ -179,3 +179,16 @@ a {
     #salesCountdown h6 {
         font-size: 0px;
     }
+    #newCartItems {
+        background-color: #ff0000;
+        color: #ffffff;
+        border: 0px solid #ff0000;
+        border-radius: 15px;
+        display: inline-block;
+        padding-left: 2px;
+        padding-right: 2px;
+        display: none;
+    }
+    #newCartItems p {
+        margin: 0px;
+    }

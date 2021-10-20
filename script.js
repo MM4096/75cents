@@ -72,6 +72,16 @@ function calculateCost(itemNumber) {
     numberItems = +document.getElementById("qty").value;
     totalCost = itemCost * numberItems;
     document.getElementById("cost").innerHTML = "Add " + numberItems + " to cart for $" + totalCost;
+    var currentNewCartItems = parseInt(getCookie("newItems"));
+    var newCartItems = currentNewCartItems + numberItems;
+    if (newCartItems > 0) {
+        document.getElementById("newCartItems").style.display = "block";
+        document.getElementById("newCartItems").innerHTML = "";
+        let newElement = document.createElement("p");
+        newElement.append(newCartItems + " new items")
+        document.getElementById("newCartItems").innerHTML = newElement;
+    }
+    setCookie("newItems", newCartItems, 7);
 }
 function updateCookie(cookieName) {
     var cookies = getCookie("cookiesEnabled");
@@ -103,8 +113,8 @@ function fillIn() {
         var itemName = "item" + i;
         var redirectDestination = "option" + i;
         getCookiePush(itemName, redirectDestination)
-
     }
+    document.getElementById("newCartItems").style.display = "none";
 }
 function getCookiePush(cookieName, redirectDestination) {
 
@@ -167,7 +177,7 @@ function sendOrder() {
     sendString = itemQuantity.join();
     var name = prompt("Please enter your name", getCookie("savedName"))
     var formClass = prompt("Please enter your form class", getCookie('formClass'));
-    if (name != null || formClass != null) {
+    if (name != null && formClass != null) {
         if (name != "" || formClass != "" || ableToSend != 0) {
             if (sendString != ",0,0,0,0,0") {
                 setCookie("formClass", formClass, 365);
