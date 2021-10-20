@@ -113,6 +113,7 @@ function fillIn() {
         getCookiePush(itemName, redirectDestination)
     }
     document.getElementById("newCartItems").style.display = "none"
+    setCookie("newItems", 0, 7)
 }
 function getCookiePush(cookieName, redirectDestination) {
 
