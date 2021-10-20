@@ -86,11 +86,11 @@ function updateCookie(cookieName) {
     } else {
         window.alert("Unable to update cart. Reason #0100 - Cookies not enabled.")
     }
-    var currentNewCartItems = Number(getCookie("newItems"));
+    var currentNewCartItems = parseInt(getCookie("newItems"));
     var newCartItems = currentNewCartItems + numberItems;
     if (newCartItems > 0) {
         document.getElementById("newCartItems").style.display = "block";
-        document.getElementById("newCartItems").innerHTML = newCartItems + "<p> new items</p>";
+        document.getElementById("newCartItems").innerText = newCartItems + " new items";
         setCookie("newItems", newCartItems, 7);
     }
 }
