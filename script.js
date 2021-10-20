@@ -72,7 +72,7 @@ function calculateCost(itemNumber) {
     numberItems = +document.getElementById("qty").value;
     totalCost = itemCost * numberItems;
     document.getElementById("cost").innerHTML = "Add " + numberItems + " to cart for $" + totalCost;
-    var currentNewCartItems = parseInt(getCookie("newItems"));
+    var currentNewCartItems = Number(getCookie("newItems"));
     var newCartItems = currentNewCartItems + numberItems;
     if (newCartItems > 0) {
         document.getElementById("newCartItems").style.display = "block";
