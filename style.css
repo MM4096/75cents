@@ -184,7 +184,7 @@ a {
         color: #ffffff;
         border: 0px solid #ff0000;
         border-radius: 15px;
-        display: none inline-block;
+        display: inline-block;
         padding-left: 2px;
         padding-right: 2px;
     }
