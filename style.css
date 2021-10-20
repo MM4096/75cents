@@ -184,10 +184,9 @@ a {
         color: #ffffff;
         border: 0px solid #ff0000;
         border-radius: 15px;
-        display: inline-block;
+        display: none inline-block;
         padding-left: 2px;
         padding-right: 2px;
-        display: none;
     }
     #newCartItems p {
         margin: 0px;
