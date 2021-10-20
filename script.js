@@ -97,7 +97,6 @@ function updateCookie(cookieName) {
     
     
 
-}
 function cookieFooterToggle() {
     let x = getCookie("cookiesEnabled");
     if (x == 1) {
