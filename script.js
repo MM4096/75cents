@@ -80,7 +80,7 @@ function updateCookie(cookieName) {
         if (numberItems > -1 && Math.round(numberItems) == numberItems) {
             var addedItems = parseInt(getCookie(cookieName));
 
-            setCookie(cookieName, numberItems += addedItems, 365);
+            setCookie(cookieName, numberItems + addedItems, 365);
         } else {
             window.alert("Unable to update cart. Reason #0011 - Updated invalid value")
         }
