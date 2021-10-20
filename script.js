@@ -1,6 +1,4 @@
-document.onload = function () {
-    document.getElementById("newCartItems").style.display = "none"
-}
+window.addEventListener("load", function () { document.getElementById("newCartItems").style.display = "none"; });
 
 var allowCookies = 0;
 var itemCost;
