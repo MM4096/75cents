@@ -69,6 +69,8 @@ function calculateCost(itemNumber) {
         0.5, //chupa chups
         //cost of item 5
         0.5, //Sour candy
+        //cost of item 6
+        5, //mystery box
     ]
     itemCost = costs[itemNumber];
     numberItems = 0;
@@ -112,7 +114,7 @@ function cookieFooterToggle() {
     }
 }
 function fillIn() {
-    for (var i = 1; i < 6; i++) {
+    for (var i = 1; i < 7; i++) {
         var itemName = "item" + i;
         var redirectDestination = "option" + i;
         getCookiePush(itemName, redirectDestination)
@@ -126,7 +128,7 @@ function getCookiePush(cookieName, redirectDestination) {
     document.getElementById(redirectDestination).value = x;
 }
 function updateAllCookies() {
-    for (var i = 1; i < 6; i++) {
+    for (var i = 1; i < 7; i++) {
         var cookieUpdate = "item" + i;
         var cookieUpdateValue = document.getElementById("option" + i).value;
         setCookie(cookieUpdate, cookieUpdateValue, 365);
@@ -136,7 +138,7 @@ function updateAllCookies() {
 }
 function calculateCostRedirect() {
     let qty = []
-    for (var i = 1; i < 6; i++) {
+    for (var i = 1; i < 7; i++) {
         var getID = "option" + i;
         qty[i] = +document.getElementById(getID).value
     }
@@ -152,16 +154,18 @@ function calculateCostRedirect() {
         0.5, //chupa chups init 0.5
         //cost of item 5
         0.5, //Sour candy init 0.5
+        //cost of item 6
+        5, //mystery box init 5
     ]
     let eachOrderCost = [];
-    for (var a = 1; a < 6; a++) {
+    for (var a = 1; a < 7; a++) {
         itemCost = costs[a];
         numberItems = +document.getElementById("option" + a).value;
         eachOrderCost[a] = itemCost * numberItems;
     }
     currentTotal = 0;
     var add;
-    for (var b = 1; b < 6; b++) {
+    for (var b = 1; b < 7; b++) {
         add = eachOrderCost[b];
         currentTotal += add;
     }
@@ -172,7 +176,7 @@ function sendOrder() {
     var sendString;
     //boolean
     var ableToSend = 1;
-    for (var i = 1; i < 6; i++) {
+    for (var i = 1; i < 7; i++) {
         itemQuantity[i] = document.getElementById("option" + i).value;
         if (itemQuantity[i] < 0 || Math.round(itemQuantity[i]) == itemQuantity[i]) {
             ableToSend = 0;

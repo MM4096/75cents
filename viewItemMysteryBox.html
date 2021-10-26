@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>View Item > Mystery Box</title>
+    <script src="script.js"></script>
+    <link rel="shortcut icon" href="logo.jpg" />
+    <script src="jquery-3.6.0.js"></script>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <img src="displayLogo.jpg" />
+        <a href="index.html">Home</a>
+        <a href="cart.html">
+            Cart
+            <div id="newCartItems"><p>11234567890 new</p></div>
+
+        </a>
+
+    </div>
+    <div class="postContainer">
+        <div class="postThumb">
+            <img src="" />
+            <h2>Image Currentely unavalible</h2>
+        </div>
+        <div class="postContent">
+            <h3>1 Mystery Box</h3>
+            <p>1 Mystery Box contains 2-5 of the following:</p>
+            <ul>
+                <li>1 Chocolate Favorate</li>
+                <li>1 Chupa Chups</li>
+                <li>1 Lolly scramble pack</li>
+                <li>1 Licorice Allsorts pack</li>
+                <li>1 Sour Candy pack</li>
+            </ul>
+            <br />
+            <p>Allergies:</p>
+            <ul>
+                <li>Not suggested for people with allergies</li>
+            </ul>
+            <br />
+            <p>
+                Cost:
+                <strike>
+                    <!--insert old cost here (ignore if no sales)-->
+
+                </strike>
+                <!--Insert current cost ($5)-->
+                $5
+
+            </p>
+            <input type="number" onchange="calculateCost(6)" id="qty" /><button id="cost" onclick="updateCookie('item6')">Add 0 to cart for $0</button>
+        </div>
+    </div>
+</body>
+</html>
