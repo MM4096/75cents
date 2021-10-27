@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>
+        Home - 75 Cents
+    </title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="logo.jpg" />
+    <script src="script.js"></script>
+    <script src="jquery-3.6.0.js"></script>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <img src="displayLogo.jpg" />
+
+        <a href="index.html">Home</a>
+
+        <a href="cart.html">
+            Cart
+            <div id="newCartItems"><p>11234567890 new</p></div>
+        </a>
+        <a href="mm4096.github.io/8jch_test/index.html">Visit our test page!</a>
+
+        <a href="search.html">Search (Beta)</a>
+
+    </div>
+    <div id="salesCountdown" hidden>
+        <h6>This will never show up!</h6>
+        <h2>TOTALLY A SALE!</h2>
+        <h3>0% off all items!</h3>
+        <p id="timeLeft">Neither will this</p>
+    </div>
+
+    <div class="search">
+        <input type="search" id="search" placeholder="Search for an item by name..." />
+        <button id="enter" onclick="search()">Search</button>
+    </div>
+    
+    
+    <div id="searchResults">
+        <h3 id="result" hidden>Hello. Message not updated.</h3>
+        <a href="viewItemChocolateFavorates.html" id="o1" hidden>Chocolate Favorates<br /></a>
+        <a href="viewItemChupaChups.html" id="o2" hidden>Chupa Chups<br /></a>
+        <a href="viewItemLicoriceAllsorts.html" id="o3" hidden>Licorice Allsorts<br /></a>
+        <a href="viewItemLollyScramble.html" id="o4" hidden>Lolly Scramble<br /></a>
+        <a href="viewItemMysteryBox.html" id="o5" hidden>Mystery Box<br /></a>
+        <a href="viewItemSourCandy.html" id="o6" hidden>Sour Candy<br /></a>
+    </div>
+</body>
+</html>

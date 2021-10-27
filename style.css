@@ -188,3 +188,15 @@ a {
     #newCartItems p {
         margin: 0px;
     }
+    #search {
+        width: 20%;
+    }
+    .search{
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+    }
+    #searchResults {
+        text-align: center;
+        width: 100%;
+    }
