@@ -14,11 +14,8 @@ $(document).ready(function () {
     //search function
     //Made by me!
 
-    $("#search").on("keypress", function (e) {
-        if (e.which == 13) {
-            search();                     
-            }
-    })
+    $("#search").change(function () { search() })
+
 })
 function search() {
     const items = ["", "chocolate favorates", "chupa chups", "licorice allsorts", "lolly scramble", "mystery box", "sour candy"];

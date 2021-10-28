@@ -125,6 +125,10 @@ a {
         display: inline-block;
         width: 100%;
     }
+    .t {
+        display: inline-block;
+        margin: 10px;
+    }
     .navbar a {
         float: left;
         display: block;
@@ -189,7 +193,7 @@ a {
         margin: 0px;
     }
     #search {
-        width: 20%;
+        width: 200px;
     }
     .search{
         display: inline-block;
