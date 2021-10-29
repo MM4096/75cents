@@ -100,13 +100,13 @@ a {
     display: inline-block;
     margin: 10px 10px;
     border: 1px solid #000000;
-    width: 100px;
+    width: 175px;
     cursor: pointer;
 }
 
     .itemView img {
-        width: 100px;
-        height: 100px;
+        width: 175px;
+        height: 175px;
         margin: 0px 0px;
         padding: 0px 0px;
     }
@@ -115,7 +115,7 @@ a {
         padding: 0px 0px;
         margin: 0px, 0px;
         text-overflow: ellipsis;
-        width: 100px;
+        width: 175px;
         overflow: hidden;
         white-space: nowrap;
     }

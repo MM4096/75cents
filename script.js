@@ -188,16 +188,22 @@ function sendOrder() {
     if (name != null && formClass != null) {
         if (name != "" || formClass != "" || ableToSend != 0) {
             if (sendString != ",0,0,0,0,0") {
-                setCookie("formClass", formClass, 365);
-                setCookie("savedName", name, 365);
-                //Sends the email
-                var link = "mailto:leo.xu@kingsway.school.nz"
-                    + "?cc=enoch.wu@kingsway.school.nz"
-                    + "&subject=" + encodeURIComponent("Order")
-                    + "&body=" + encodeURIComponent("Please press <SEND>\r\r\r\r" + sendString + "," + name + "," + formClass)
-                    ;
+                var outlook = window.prompt("This will require Outlook as an app. If you don't have Outlook app, please type 'N' below", "");
+                if (outlook == "N" || outlook == "n") {
+                    window.alert("Please open your email. Send an email to leo.xu@kingsway.school.nz and cc enoch.wu@kingsway.school.nz. For subject, write 'order' for body, copy and paste this " + sendString + " and state your name and form class after.")
+                } else {
+                    setCookie("formClass", formClass, 365);
+                    setCookie("savedName", name, 365);
+                    //Sends the email
+                    var link = "mailto:leo.xu@kingsway.school.nz"
+                        + "?cc=enoch.wu@kingsway.school.nz"
+                        + "&subject=" + encodeURIComponent("Order")
+                        + "&body=" + encodeURIComponent("Please press <SEND>\r\r\r\r" + sendString + "," + name + "," + formClass)
+                        ;
 
-                window.location.href = link;
+                    window.location.href = link;
+                }
+                
             } else {
                 window.alert("Your Order was cancelled. Reason: #0010 - Order was blank")
             }
