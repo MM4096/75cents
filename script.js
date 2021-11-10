@@ -64,7 +64,7 @@ function calculateCost(itemNumber) {
         //cost of item 2
         1, //licorice allsorts
         //cost of item 3
-        0.5, // Chocolate favorates init 0.5
+        0.5, // Chocolate favourites init 0.5
         //cost of item 4
         0.5, //chupa chups
         //cost of item 5
@@ -149,7 +149,7 @@ function calculateCostRedirect() {
         //cost of item 2
         1, //licorice allsorts init 1
         //cost of item 3
-        0.5, // Chocolate favorates init 0.5
+        0.5, // Chocolate favourites init 0.5
         //cost of item 4
         0.5, //chupa chups init 0.5
         //cost of item 5
@@ -198,7 +198,7 @@ function sendOrder() {
                     var link = "mailto:leo.xu@kingsway.school.nz"
                         + "?cc=enoch.wu@kingsway.school.nz"
                         + "&subject=" + encodeURIComponent("Order")
-                        + "&body=" + encodeURIComponent("Please press <SEND>\r\r\r\r" + sendString + "," + name + "," + formClass)
+                        + "&body=" + encodeURIComponent("Please pres <SEND>\r\r\r\r" + sendString + "," + name + "," + formClass)
                         ;
 
                     window.location.href = link;

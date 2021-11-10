@@ -18,7 +18,7 @@ $(document).ready(function () {
 
 })
 function search() {
-    const items = ["", "chocolate favorates", "chupa chups", "licorice allsorts", "lolly scramble", "mystery box", "sour candy"];
+    const items = ["", "chocolate favourites", "chupa chups", "licorice allsorts", "lolly scramble", "mystery box", "sour candy"];
     var searchVal = $("#search").val();
     var searchValue = searchVal.toLowerCase();
     $("#result").show();
