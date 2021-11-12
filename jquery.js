@@ -14,7 +14,7 @@ $(document).ready(function () {
     //search function
     //Made by me!
 
-    $("#search").change(function () { search() })
+    $("#search").change(function () { search() });
 
 })
 function search() {
