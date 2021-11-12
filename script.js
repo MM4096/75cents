@@ -6,6 +6,25 @@ var numberItems = 0;
 var totalCost;
 var currentTotal;
 var added;
+function getCost(itemNumber) {
+    const costs = [
+        0,
+        //cost of item 1 init 1
+        1, //lolly scramble init 1
+        //cost of item 2
+        1, //licorice allsorts init 1
+        //cost of item 3
+        0.5, // Chocolate favourites init 0.5
+        //cost of item 4
+        0.5, //chupa chups init 0.5
+        //cost of item 5
+        0.5, //Sour candy init 0.5
+        //cost of item 6
+        5, //mystery box init 5
+    ]
+    var rCost = costs[itemNumber];
+    return rCost;
+}
 function accepted() {
     allowCookies = 1;
     document.getElementById("cookieFooter").style.visibility = "hidden";
@@ -57,22 +76,8 @@ function getCookieValue(cookieName) {
     document.getElementById("returnCookieValue").innerHTML = value;
 }
 function calculateCost(itemNumber) {
-    const costs = [
-        0,
-        //cost of item 1 init 1
-        1, //lolly scramble
-        //cost of item 2
-        1, //licorice allsorts
-        //cost of item 3
-        0.5, // Chocolate favourites init 0.5
-        //cost of item 4
-        0.5, //chupa chups
-        //cost of item 5
-        0.5, //Sour candy
-        //cost of item 6
-        5, //mystery box
-    ]
-    itemCost = costs[itemNumber];
+    
+    itemCost = getCost(itemNumber);
     numberItems = 0;
     numberItems = parseInt(document.getElementById("qty").value);
     totalCost = itemCost * numberItems;
@@ -142,24 +147,10 @@ function calculateCostRedirect() {
         var getID = "option" + i;
         qty[i] = +document.getElementById(getID).value
     }
-    const costs = [
-        0,
-        //cost of item 1 init 1
-        1, //lolly scramble init 1
-        //cost of item 2
-        1, //licorice allsorts init 1
-        //cost of item 3
-        0.5, // Chocolate favourites init 0.5
-        //cost of item 4
-        0.5, //chupa chups init 0.5
-        //cost of item 5
-        0.5, //Sour candy init 0.5
-        //cost of item 6
-        5, //mystery box init 5
-    ]
+    
     let eachOrderCost = [];
     for (var a = 1; a < 7; a++) {
-        itemCost = costs[a];
+        itemCost = getCost(a);
         numberItems = +document.getElementById("option" + a).value;
         eachOrderCost[a] = itemCost * numberItems;
     }
