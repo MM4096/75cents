@@ -10,9 +10,9 @@ function getCost(itemNumber) {
     const costs = [
         0,
         //cost of item 1 init 1
-        1, //lolly scramble init 1
+        0.5, //lolly scramble init 1
         //cost of item 2
-        1, //licorice allsorts init 1
+        0.5, //licorice allsorts init 1
         //cost of item 3
         0.5, // Chocolate favourites init 0.5
         //cost of item 4
@@ -20,7 +20,7 @@ function getCost(itemNumber) {
         //cost of item 5
         0.5, //Sour candy init 0.5
         //cost of item 6
-        5, //mystery box init 5
+        2.5, //mystery box init 5
     ]
     var rCost = costs[itemNumber];
     return rCost;
@@ -209,7 +209,7 @@ function sendOrder() {
 }
 //thanks to w3schools.com for the countdown code
 // Set the date we're counting down to
-var countDownDate = new Date("October 20, 2021 13:37:25").getTime();
+var countDownDate = new Date("November 24, 2021 15:00:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function () {
