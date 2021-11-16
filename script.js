@@ -34,6 +34,7 @@ function notAccepted() {
     allowCookies = 0;
     document.getElementById("cookieFooter").style.visibility = "hidden";
     hardSetCookie("cookiesEnabled", 0, 365);
+    console.warn("Warning! Not enabling cookies will not allow you to add items to cart!")
 }
 function setCookie(cookieName, cookieValue, cookieValidDays) {
     let allowCookie = getCookie('cookiesEnabled')
@@ -92,11 +93,13 @@ function updateCookie(cookieName) {
             setCookie(cookieName, numberItems + addedItems, 365);
             added = 1;
         } else {
-            window.alert("Unable to update cart. Reason #0011 - Updated invalid value")
+            window.alert("Error. See console for reason (Ctrl + Shift + I)")
+            console.error("Updated invalid value. This could be negative values or zero.")
             added = 0;
         }
     } else {
-        window.alert("Unable to update cart. Reason #0100 - Cookies not enabled.")
+        window.alert("Error. See console for reason (Ctrl + Shift + I)")
+        console.error("Cannot update cart. Cookies are not enabled. To enable, go to the home page and press 'Allow'")
         added = 0;
     }
     var currentNewCartItems = parseInt(getCookie("newItems"));
@@ -196,14 +199,16 @@ function sendOrder() {
                 }
                 
             } else {
-                window.alert("Your Order was cancelled. Reason: #0010 - Order was blank")
+                window.alert("Error. See console for reason (Ctrl + Shift + I)")
+                console.error("Could not send order. Reason: order was blank. Please order something first.")
             }
         }
         else {
-            window.alert("Your Order was cancelled. Reason: #0001 - Unexpected Answer")
+            window.alert("Error. See console for reason (Ctrl + Shift + I)")
+            console.error("Could not send order. Reason: order had unexpected values. Check to see if there's any decimals, negative values or other things.")
         }
     } else {
-        window.alert("Your Order was cancelled. Reason: #0101 - Order Canceled.")
+        window.alert("Odrder cancelled.")
     }
     
 }

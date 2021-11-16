@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        75 Cents > Home > Mystery Box Unpacking
+    </title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="logo.jpg" />
+    <script src="script.js"></script>
+    <script src="jquery-3.6.0.js"></script>
+    <script src="jquery.js"></script>
+    <script src="mysteryBox.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="displayLogo.jpg" />
+
+        <a href="index.html">Home</a>
+
+        <a href="cart.html">
+            Cart
+            <div id="newCartItems"><p>11234567890 new</p></div>
+        </a>
+        <a href="readMe.html">Read Me</a>
+        <div class="t">
+            <div class="search">
+                <input type="search" id="search" placeholder="Search for an item by name..." />
+                <button id="enter" onclick="search()">Search</button>
+            </div>
+        </div>
+    </div>
+    <h3>Press below to see a random mystery box content!</h3>
+    <button onclick="go()">Go!</button>
+    <div id="output"></div>
+</body>
+</html>

@@ -1,5 +1,8 @@
 $(document).ready(function () {
-    
+    $(':input[type="number"]').attr({
+        "min": 0,
+        "step": 1
+    })
     
     $("#cost").click(function () {
         var txt = $("#cost").text();
