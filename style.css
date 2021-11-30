@@ -160,6 +160,11 @@ a {
         font-size: 20px;
         text-align: center;
     }
+    .gridItem input {
+        width: 90%;
+        text-align: center;
+    }
+    /*Sales countdown control*/
     #salesCountdown {
         background-color: #FFFF00;
         color: #000000;
@@ -179,6 +184,7 @@ a {
     #salesCountdown h6 {
         font-size: 0px;
     }
+    
     #newCartItems {
         background-color: #ff0000;
         color: #ffffff;

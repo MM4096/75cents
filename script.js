@@ -129,6 +129,7 @@ function fillIn() {
     }
     document.getElementById("newCartItems").style.display = "none"
     setCookie("newItems", 0, 7)
+    calculateCostRedirect();
 }
 function getCookiePush(cookieName, redirectDestination) {
 

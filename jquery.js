@@ -1,7 +1,9 @@
 $(document).ready(function () {
-    $(':input[type="number"]').attr({
-        "min": 0,
-        "step": 1
+    $('#qty').change(function () {
+        var val = +document.getElementById("qty").value;
+        if (val < 0 || val > 99 || Math.round(val) != val) {
+            $("#qty").val(0);
+        }
     })
     
     $("#cost").click(function () {
