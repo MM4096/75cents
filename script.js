@@ -115,7 +115,7 @@ function updateCookie(cookieName) {
 
 function cookieFooterToggle() {
     var url = window.location.href;
-    if (url == "https://mm4096.github.io/") {
+    if (url === "https://mm4096.github.io/") {
         window.location.href = "https://mm4096.github.io/index.html";
     }
     let x = getCookie("cookiesEnabled");
