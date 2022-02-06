@@ -127,7 +127,7 @@ function cookieFooterToggle() {
 }
 function fillIn() {
     
-    if (allowCookies == 0) {
+    if (allowCookies == "0") {
         $(".gridContainer").show();
         $("#items").hide()
         for (var i = 1; i < 7; i++) {
