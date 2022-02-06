@@ -127,7 +127,7 @@ function cookieFooterToggle() {
 }
 function fillIn() {
     
-    if (allowCookies == "0") {
+    if (getCookie("cookiesEnabled") == "0") {
         $(".gridContainer").show();
         $("#items").hide()
         for (var i = 1; i < 7; i++) {
@@ -144,7 +144,11 @@ function fillIn() {
         for (let j = 1; j < 7; j++) {
             var itemName = "item" + j;
             var destinationId = "cItem" + j;
-            $("#" + destinationId).text(getCookie(itemName));
+            if (getCookie(itemName) != "" || getCookie(itemName) == null) {
+                $("#" + destinationId).text(getCookie(itemName));
+            } else {
+                $("#" + destinationId).text("0");
+            }
         }
     }
 }
