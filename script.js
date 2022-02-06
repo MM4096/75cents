@@ -126,18 +126,18 @@ function cookieFooterToggle() {
     }
 }
 function fillIn() {
-    
+    for (var i = 1; i < 7; i++) {
+        var itemName = "item" + i;
+        var redirectDestination = "option" + i;
+        getCookiePush(itemName, redirectDestination);
+    }
+    document.getElementById("newCartItems").style.display = "none"
+    setCookie("newItems", 0, 7)
+    calculateCostRedirect();
     if (getCookie("cookiesEnabled") == "0") {
         $(".gridContainer").show();
         $("#items").hide()
-        for (var i = 1; i < 7; i++) {
-            var itemName = "item" + i;
-            var redirectDestination = "option" + i;
-            getCookiePush(itemName, redirectDestination);
-        }
-        document.getElementById("newCartItems").style.display = "none"
-        setCookie("newItems", 0, 7)
-        calculateCostRedirect();
+        
     } else {
         $(".gridContainer").hide();
         $("#items").show();
