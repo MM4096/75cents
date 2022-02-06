@@ -115,8 +115,8 @@ function updateCookie(cookieName) {
 
 function cookieFooterToggle() {
     var url = window.location.href;
-    if (url === "https://mm4096.github.io/") {
-        window.location.href = "https://mm4096.github.io/index.html";
+    if (url === "https://mm4096.github.io/75cents/") {
+        window.location.href = "https://mm4096.github.io/75cents/index.html";
     }
     let x = getCookie("cookiesEnabled");
     if (x == 1) {
@@ -126,18 +126,31 @@ function cookieFooterToggle() {
     }
 }
 function fillIn() {
-    for (var i = 1; i < 7; i++) {
-        var itemName = "item" + i;
-        var redirectDestination = "option" + i;
-        getCookiePush(itemName, redirectDestination)
+    
+    if (allowCookies == 0) {
+        $(".gridContainer").show();
+        $("#items").hide()
+        for (var i = 1; i < 7; i++) {
+            var itemName = "item" + i;
+            var redirectDestination = "option" + i;
+            getCookiePush(itemName, redirectDestination);
+        }
+        document.getElementById("newCartItems").style.display = "none"
+        setCookie("newItems", 0, 7)
+        calculateCostRedirect();
+    } else {
+        $(".gridContainer").hide();
+        $("#items").show();
+        for (let j = 1; j < 7; j++) {
+            var itemName = "item" + j;
+            var destinationId = "cItem" + j;
+            $("#" + destinationId).text(getCookie(itemName));
+        }
     }
-    document.getElementById("newCartItems").style.display = "none"
-    setCookie("newItems", 0, 7)
-    calculateCostRedirect();
 }
 function getCookiePush(cookieName, redirectDestination) {
 
-    var x = Number(getCookie(cookieName));
+    var x = parseInt(getCookie(cookieName));
     document.getElementById(redirectDestination).value = x;
 }
 function updateAllCookies() {
