@@ -1,57 +1,66 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Cart</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="logo.jpg" />
-    <script src="jquery-3.6.0.js"></script>
-    <script src="script.js"></script>
+	<title>Cart</title>
+	<link rel="stylesheet" href="style.css" />
+	<link rel="shortcut icon" href="logo.jpg" />
+	<script src="jquery-3.6.0.js"></script>
+	<script src="script.js"></script>
 
-    <style>
-    </style>
+	<style>
+	</style>
 </head>
 <body onload="fillIn()">
-    <div class="navbar">
-        <img src="displayLogo.jpg" />
-        <a href="index.html">Home</a>
-        <a href="cart.html">Cart
-        <div id="newCartItems"><p>11234567890 new</p></div>
-        </a>
-         
-    </div>
+	<div class="navbar">
+		<img src="displayLogo.jpg" />
+		<a href="index.html">Home</a>
+		<a href="cart.html">Cart
+		<div id="newCartItems"><p>11234567890 new</p></div>
+		</a>
+		 
+	</div>
 
 
-    <p>Your cart contains: </p>
-    <div class="gridContainer">
-        <div class="gridItem"><label for="option1">Lolly Scrambles</label></div>
-        <div class="gridItem" onchange="updateAllCookies()"><input id="option1" type="number" /></div>
-        <div class="gridItem"><label for="option2">Licorice Allsorts</label></div>
-        <div class="gridItem" onchange="updateAllCookies()"><input id="option2" type="number" /></div>
-        <div class="gridItem"><label for="option3">Chocolate favourites</label></div>
-        <div class="gridItem" onchange="updateAllCookies()"><input id="option3" type="number" /></div>
-        <div class="gridItem"><label for="option4">Chupa Chups</label></div>
-        <div class="gridItem" onchange="updateAllCookies()"><input id="option4" type="number" /></div>
-        <div class="gridItem"><label for="option5">Sour Candy</label></div>
-        <div class="gridItem" onchange="updateAllCookies()"><input id="option5" type="number" /></div>
-        <div class="gridItem"><label for="option6">Mystery Box</label></div>
-        <div class="gridItem" onchange="updateAllCookies()"><input id="option6" type="number" /></div>
-        <div class="gridItem"><p>Total:</p></div>
-        <div class="gridItem" id="total">$0</div>
+	<h3>Your cart contains: </h3>
+	<div class="gridContainer">
+		<div class="gridItem"><label for="option1">Lolly Scrambles</label></div>
+		<div class="gridItem" onchange="updateAllCookies()"><input id="option1" type="number" /></div>
+		<div class="gridItem"><label for="option2">Licorice Allsorts</label></div>
+		<div class="gridItem" onchange="updateAllCookies()"><input id="option2" type="number" /></div>
+		<div class="gridItem"><label for="option3">Chocolate favourites</label></div>
+		<div class="gridItem" onchange="updateAllCookies()"><input id="option3" type="number" /></div>
+		<div class="gridItem"><label for="option4">Chupa Chups</label></div>
+		<div class="gridItem" onchange="updateAllCookies()"><input id="option4" type="number" /></div>
+		<div class="gridItem"><label for="option5">Sour Candy</label></div>
+		<div class="gridItem" onchange="updateAllCookies()"><input id="option5" type="number" /></div>
+		<div class="gridItem"><label for="option6">Mystery Box</label></div>
+		<div class="gridItem" onchange="updateAllCookies()"><input id="option6" type="number" /></div>
+		<div class="gridItem"><p>Total:</p></div>
+		<div class="gridItem" id="total">$0</div>
 
-    </div>
-    <div id="items">
-        <div id="cItem1"></div>
-        <div id="cItem2"></div>
-        <div id="cItem3"></div>
-        <div id="cItem4"></div>
-        <div id="cItem5"></div>
-        <div id="cItem6"></div>
-    </div>
+	</div>
+	<div id="items">
+		<div id="cContainerItem1">Lolly Scrambles: <div id="cItem1"></div><div id="cItemCost1"></div><br /></div>
+		
+		<div id="cContainerItem2">Licorice Allsorts: <div id="cItem2"></div><div id="cItemCost2"></div><br /></div>
+		
+		<div id="cContainerItem3">Chocolate Favorites: <div id="cItem3"></div><div id="cItemCost3"></div><br /></div>
+		
+		<div id="cContainerItem4">Chupa Chups: <div id="cItem4"></div><div id="cItemCost4"></div><br /></div>
+		
+		<div id="cContainerItem5">Sour Candy: <div id="cItem5"></div><div id="cItemCost5"></div><br /></div>
+		
+		
+		<div id="cContainerItem6">Mystery Box: <div id="cItem6"></div><div id="cItemCost6"></div><br /></div>
+
+		<div id="cTotal"></div>
+		<br />
+	</div>
 
 
 
-    <button onclick="sendOrder()">Check Out</button>
-
+	<button onclick="sendOrder()">Check Out</button>
+	
 
 
 
