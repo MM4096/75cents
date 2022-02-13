@@ -89,9 +89,7 @@ function updateCookie(cookieName) {
 	if (cookies == "1") {
 		if (numberItems > -1 && Math.round(numberItems) == numberItems) {
 			var addedItems = parseInt(getCookie(cookieName));
-			if (isNaN(addedItems)) {
-				addedItems = 0;
-			}
+			console.log(addedItems);
 			setCookie(cookieName, numberItems + addedItems, 365);
 			added = 1;
 		} else {
