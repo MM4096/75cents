@@ -140,7 +140,7 @@ function fillIn() {
 	for (let j = 1; j < 7; j++) {
 		var itemName = "item" + j;
 		var destinationId = "cItem" + j;
-		if (getCookie(itemName) != "" || getCookie(itemName) == null) {
+		if (getCookie(itemName) != "" || getCookie(itemName) != null) {
 			$("#" + destinationId).text(getCookie(itemName));
 			$("#cContainerItem" + j).show();
 			$("#cItemCost" + j).text("$" + getCost(j) * getCookie(itemName));
