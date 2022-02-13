@@ -143,7 +143,7 @@ function fillIn() {
 		if (getCookie(itemName) != "" || getCookie(itemName) != null) {
 			$("#" + destinationId).text(getCookie(itemName));
 			$("#cContainerItem" + j).show();
-			$("#cItemCost" + j).text("$" + getCost(j) * getCookie(itemName));
+			$("#cItemCost" + j).text("$" + getCost(j) * parseInt(getCookie(itemName)));
 		} else {
 			$("#" + destinationId).text("0");
 			$("#cItemCost" + j).text("$0");
