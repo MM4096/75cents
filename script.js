@@ -138,6 +138,8 @@ function fillIn() {
 	$(".gridContainer").hide();
 	$("#items").show();
 	for (let j = 1; j < 7; j++) {
+		console.log(typeof getCookie(itemName));
+		console.log(getCookie(itemName))
 		var itemName = "item" + j;
 		var destinationId = "cItem" + j;
 		if (getCookie(itemName) != "" || getCookie(itemName) != null) {
