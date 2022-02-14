@@ -131,7 +131,7 @@ function fillIn() {
 		console.log(getCookie(j));
 		var itemName = "item" + j;
 		var destinationId = "cItem" + j;
-		if (getCookie(j) != "" || getCookie(j) != null) {
+		if (getCookie(j) != "" && getCookie(j) != null) {
 			$("#" + destinationId).text(getCookie(itemName));
 			$("#cContainerItem" + itemName).show();
 			$("#cItemCost" + j).text("$" + getCost(j) * parseInt(getCookie(itemName)));
