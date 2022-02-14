@@ -143,12 +143,10 @@ function fillIn() {
 	}
 	var cCost = 0;
 	for (let k = 1; k < 7; k++) {
-		if ($("cContainerItem" + k).is(":visible")) {
-			console.log("visible: " + k);
 			let str = $("#cItemCost" + k).text();
 			str = str.substring(1);
 			cCost += parseInt(str) * getCost(k);
-      }
+
 	}
 	$("#cTotal").text("$" + cCost);
 }
