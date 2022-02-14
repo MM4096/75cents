@@ -145,6 +145,7 @@ function fillIn() {
 	for (let k = 1; k < 7; k++) {
 			let str = $("#cItemCost" + k).text();
 			str = str.substring(1);
+			console.log(str);
 			cCost += parseInt(str) * getCost(k);
 
 	}
