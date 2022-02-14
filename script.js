@@ -127,8 +127,6 @@ function fillIn() {
 	$(".gridContainer").hide();
 	$("#items").show();
 	for (let j = 1; j < 7; j++) {
-		console.log(typeof getCookie(j));
-		console.log(getCookie(j));
 		var itemName = "item" + j;
 		var destinationId = "cItem" + j;
 		if (getCookie(itemName) != "" && getCookie(itemName) != null) {
@@ -146,7 +144,7 @@ function fillIn() {
 			let str = $("#cItemCost" + k).text();
 			str = str.substring(1);
 			console.log(str);
-			cCost += parseInt(str) * getCost(k);
+			cCost += parseInt(str);
 
 	}
 	$("#cTotal").text("$" + cCost);
