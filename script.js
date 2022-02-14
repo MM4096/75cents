@@ -145,6 +145,7 @@ function fillIn() {
 			str = str.substring(1);
 			console.log(str);
 			cCost += parseInt(str);
+			console.log("cCost = " + cCost);
 
 	}
 	$("#cTotal").text("$" + cCost);
