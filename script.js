@@ -146,7 +146,7 @@ function fillIn() {
 }
 
 function getCookiePush(cookieName, redirectDestination) {
-	if (getCookie(cookieName) != '' || getCookie(cookieName) != NaN ) {
+	if (parseInt(getCookie(cookieName))) {
 		var x = parseInt(getCookie(cookieName));
 		document.getElementById(redirectDestination).value = x;
 	} else {
