@@ -25,19 +25,9 @@ function getCost(itemNumber) {
 	var rCost = costs[itemNumber];
 	return rCost;
 }
-function accepted() {
-	allowCookies = 1;
-	document.getElementById("cookieFooter").style.visibility = "hidden";
-	hardSetCookie("cookiesEnabled", 1, 365);
-}
-function notAccepted() {
-	allowCookies = 0;
-	document.getElementById("cookieFooter").style.visibility = "hidden";
-	hardSetCookie("cookiesEnabled", 0, 365);
-	console.warn("Warning! Not enabling cookies will not allow you to add items to cart!")
-}
+
 function setCookie(cookieName, cookieValue, cookieValidDays) {
-	let allowCookie = getCookie('cookiesEnabled')
+	let allowCookie = getCookie('cookiesEnabled');
 	if (allowCookie == "1") {
 		const day = new Date();
 		day.setTime(day.getTime() + (cookieValidDays * 24 * 60 * 60 * 1000));
@@ -119,10 +109,12 @@ function cookieFooterToggle() {
 		window.location.href = "https://mm4096.github.io/75cents/index.html";
 	}
 	let x = getCookie("cookiesEnabled");
-	if (x == 1) {
-		document.getElementById("cookieFooter").style.visibility = "hidden"
-	} else {
-		document.getElementById("cookieFooter").style.visibility = "visible"
+	if (x != 1) {
+		if (window.confirm("You must enable cookies!")) {
+			hardSetCookie("cookiesEnabled", 1, 365);
+		} else {
+			window.close();
+		}
 	}
 }
 function fillIn() {
