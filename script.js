@@ -73,11 +73,18 @@ function calculateCost(itemNumber) {
 	document.getElementById("cost").innerHTML = "Add " + numberItems + " to cart for $" + totalCost;
 }
 function updateCookie(cookieName) {
-		if (numberItems > -1 && Math.round(numberItems) == numberItems) {
-			var addedItems = parseInt(getCookie(cookieName));
-			console.log(addedItems);
-			setCookie(cookieName, numberItems + addedItems, 365);
-			added = 1;
+	let uCNumberItems = $("#qty").val();
+		if (uCNumberItems > -1 && Math.round(uCNumberItems) == uCNumberItems) {
+			if (isNaN(parseInt(getCookie(cookieName)))) {
+					setCookie(cookieName, uCNumberItems, 365);
+					added = 1;
+			} else {
+				var addedItems = parseInt(getCookie(cookieName));
+				console.log(addedItems);
+				setCookie(cookieName, uCNumberItems + addedItems, 365);
+				added = 1;
+			}
+
 		} else {
 			window.alert("Error. See console for reason (Ctrl + Shift + I)")
 			console.error("Updated invalid value. This could be negative values or zero.")
