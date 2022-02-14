@@ -58,16 +58,14 @@ function getCookie(cookieName) {
 	}
 	return "";
 }
-function checkCookie() {
-	allowCookies = getCookie("cookiesEnabled");
-}
+
 function getCookieValue(cookieName) {
 	let value = getCookie(cookieName);
 	window.alert(value);
 	document.getElementById("returnCookieValue").innerHTML = value;
 }
 function calculateCost(itemNumber) {
-	
+
 	itemCost = getCost(itemNumber);
 	numberItems = 0;
 	numberItems = parseInt(document.getElementById("qty").value);
@@ -75,8 +73,6 @@ function calculateCost(itemNumber) {
 	document.getElementById("cost").innerHTML = "Add " + numberItems + " to cart for $" + totalCost;
 }
 function updateCookie(cookieName) {
-	var cookies = getCookie("cookiesEnabled");
-	if (cookies == "1") {
 		if (numberItems > -1 && Math.round(numberItems) == numberItems) {
 			var addedItems = parseInt(getCookie(cookieName));
 			console.log(addedItems);
@@ -87,11 +83,6 @@ function updateCookie(cookieName) {
 			console.error("Updated invalid value. This could be negative values or zero.")
 			added = 0;
 		}
-	} else {
-		window.alert("Error. See console for reason (Ctrl + Shift + I)")
-		console.error("Cannot update cart. Cookies are not enabled. To enable, go to the home page and press 'Allow'")
-		added = 0;
-	}
 	var currentNewCartItems = parseInt(getCookie("newItems"));
 	var newCartItems = currentNewCartItems + numberItems;
 	if (newCartItems > 0) {
@@ -100,8 +91,8 @@ function updateCookie(cookieName) {
 		setCookie("newItems", newCartItems, 7);
 	}
 }
-	
-	
+
+
 
 function cookieFooterToggle() {
 	var url = window.location.href;
@@ -126,7 +117,7 @@ function fillIn() {
 	document.getElementById("newCartItems").style.display = "none"
 	setCookie("newItems", 0, 7)
 	calculateCostRedirect();
-   
+
 	$(".gridContainer").hide();
 	$("#items").show();
 	for (let j = 1; j < 7; j++) {
@@ -163,7 +154,7 @@ function getCookiePush(cookieName, redirectDestination) {
 		document.getElementById(redirectDestination).value = 0;
 	}
 }
-	
+
 function updateAllCookies() {
 	for (var i = 1; i < 7; i++) {
 		var cookieUpdate = "item" + i;
@@ -171,7 +162,7 @@ function updateAllCookies() {
 		setCookie(cookieUpdate, cookieUpdateValue, 365);
 	}
 	calculateCostRedirect();
-	
+
 }
 function calculateCostRedirect() {
 	let qty = []
@@ -179,7 +170,7 @@ function calculateCostRedirect() {
 		var getID = "option" + i;
 		qty[i] = +document.getElementById(getID).value
 	}
-	
+
 	let eachOrderCost = [];
 	for (var a = 1; a < 7; a++) {
 		itemCost = getCost(a);
@@ -226,7 +217,7 @@ function sendOrder() {
 
 					window.location.href = link;
 				}
-				
+
 			} else {
 				window.alert("Error. See console for reason (Ctrl + Shift + I)")
 				console.error("Could not send order. Reason: order was blank. Please order something first.")
@@ -239,7 +230,7 @@ function sendOrder() {
 	} else {
 		window.alert("Odrder cancelled.")
 	}
-	
+
 }
 //thanks to w3schools.com for the countdown code
 // Set the date we're counting down to
@@ -259,9 +250,9 @@ var x = setInterval(function () {
 	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-	
 
-	// If the count down is over, write some text 
+
+	// If the count down is over, write some text
 	//Run the following code only if it is index.html
 	var p = window.location.pathname;
 	if (p.length === 0 || p === "/" || p.match(/^\/?index/)) {
@@ -274,5 +265,5 @@ var x = setInterval(function () {
 				+ minutes + "m " + seconds + "s ";
 		}
 	}
-	
+
 }, 1000);
