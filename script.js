@@ -81,7 +81,7 @@ function updateCookie(cookieName) {
 			} else {
 				var addedItems = parseInt(getCookie(cookieName));
 				console.log(addedItems);
-				setCookie(cookieName, uCNumberItems + addedItems, 365);
+				setCookie(cookieName, parseInt(uCNumberItems) + parseInt(addedItems), 365);
 				added = 1;
 			}
 
