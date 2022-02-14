@@ -132,9 +132,9 @@ function fillIn() {
 		var itemName = "item" + j;
 		var destinationId = "cItem" + j;
 		if (getCookie(j) != "" || getCookie(j) != null) {
-			$("#" + destinationId).text(getCookie(j));
-			$("#cContainerItem" + j).show();
-			$("#cItemCost" + j).text("$" + getCost(j) * parseInt(getCookie(j)));
+			$("#" + destinationId).text(getCookie(itemName));
+			$("#cContainerItem" + itemName).show();
+			$("#cItemCost" + j).text("$" + getCost(j) * parseInt(getCookie(itemName)));
 		} else {
 			$("#" + destinationId).text("0");
 			$("#cItemCost" + j).text("$0");
