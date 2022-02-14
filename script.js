@@ -101,11 +101,10 @@ function cookieFooterToggle() {
 	}
 	let x = getCookie("cookiesEnabled");
 	if (x != 1) {
-		if (window.confirm("You must enable cookies!")) {
+		do {
+			window.confirm("You must enable cookies!");
+		} while (!window.confirm("You must enable cookies!"));
 			hardSetCookie("cookiesEnabled", 1, 365);
-		} else {
-			window.close();
-		}
 	}
 }
 function fillIn() {
@@ -121,14 +120,14 @@ function fillIn() {
 	$(".gridContainer").hide();
 	$("#items").show();
 	for (let j = 1; j < 7; j++) {
-		console.log(typeof getCookie(itemName));
-		console.log(getCookie(itemName))
+		console.log(typeof getCookie(j));
+		console.log(getCookie(j));
 		var itemName = "item" + j;
 		var destinationId = "cItem" + j;
-		if (getCookie(itemName) != "" || getCookie(itemName) != null) {
-			$("#" + destinationId).text(getCookie(itemName));
+		if (getCookie(j) != "" || getCookie(j) != null) {
+			$("#" + destinationId).text(getCookie(j));
 			$("#cContainerItem" + j).show();
-			$("#cItemCost" + j).text("$" + getCost(j) * parseInt(getCookie(itemName)));
+			$("#cItemCost" + j).text("$" + getCost(j) * parseInt(getCookie(j)));
 		} else {
 			$("#" + destinationId).text("0");
 			$("#cItemCost" + j).text("$0");
