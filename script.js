@@ -8,19 +8,19 @@ var currentTotal;
 var added;
 function getCost(itemNumber) {
 	const costs = [
-		0,
+		1,
 		//cost of item 1 init 1
-		0.5, //lolly scramble init 1
+		1, //lolly scramble init 1
 		//cost of item 2
-		0.5, //licorice allsorts init 1
+		1, //licorice allsorts init 1
 		//cost of item 3
-		0.5, // Chocolate favourites init 0.5
+		1, // Chocolate favourites init 0.5
 		//cost of item 4
 		0.5, //chupa chups init 0.5
 		//cost of item 5
 		0.5, //Sour candy init 0.5
 		//cost of item 6
-		2.5, //mystery box init 5
+		5, //mystery box init 5
 	]
 	var rCost = costs[itemNumber];
 	return rCost;
@@ -108,9 +108,9 @@ function cookieFooterToggle() {
 	}
 	let x = getCookie("cookiesEnabled");
 	if (x != 1) {
-		do {
+		while (!window.confirm("You must enable cookies!")) {
 			window.confirm("You must enable cookies!");
-		} while (!window.confirm("You must enable cookies!"));
+		}
 			hardSetCookie("cookiesEnabled", 1, 365);
 	}
 }
