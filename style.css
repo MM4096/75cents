@@ -105,10 +105,10 @@ a {
 }
 
     .itemView img {
-        width: 175px;
-        height: 175px;
+        width: 150px;
+        height: 150px;
         margin: 0px 0px;
-        padding: 0px 0px;
+        padding: 12.5px 12.5px;
     }
 
     .itemView p {
@@ -118,6 +118,7 @@ a {
         width: 175px;
         overflow: hidden;
         white-space: nowrap;
+        text-align: center;
     }
     .navbar {
         overflow: hidden;
@@ -134,7 +135,8 @@ a {
         display: block;
         background-color: #ffff00;
         text-align: center;
-        padding: 14px 16px;
+        height: 20px;
+        padding: 13px 16px;
         text-decoration: none;
         color: #000000;
     }
@@ -200,6 +202,8 @@ a {
     }
     #search {
         width: 200px;
+        height: 25px;
+        margin: 0px 0px;
     }
     .search{
         display: inline-block;
