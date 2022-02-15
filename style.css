@@ -210,6 +210,6 @@ a {
         text-align: center;
         width: 100%;
     }
-    .items {
-        display: inline;
+    #items {
+        display: inline-block;
     }
