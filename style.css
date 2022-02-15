@@ -213,3 +213,7 @@ a {
     #items > div > * {
       display: inline-block;
     }
+    .containerItem {
+      padding: 4px;
+      background-color: #ffff00;
+    }
