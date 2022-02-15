@@ -210,9 +210,4 @@ a {
         text-align: center;
         width: 100%;
     }
-    #items {
-        display: flex;
-    }
-    #items > * {
-      display: inline;
-    }
+    
