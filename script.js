@@ -144,7 +144,7 @@ function fillIn() {
 			let str = $("#cItemCost" + k).text();
 			str = str.substring(1);
 			console.log(str);
-			let iCost = parseInt(str);
+			let iCost = parseFloat(str);
 			console.log(iCost);
 			cCost += iCost;
 			console.log("cCost = " + cCost);
